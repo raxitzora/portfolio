@@ -4,14 +4,14 @@ import { SiMongodb, SiExpress, SiPytorch, SiLangchain, SiHuggingface } from 'rea
 import { motion } from 'framer-motion';
 
 const skills = [
-  { icon: <FaPython size={60} className="text-yellow-500 md:hover:text-yellow-300 transition duration-300"/>, name: "Python", desc: "A powerful programming language for AI and web development."},
-  { icon: <SiMongodb size={60} className="text-green-500 md:hover:text-green-300 transition duration-300" />, name: "MongoDB", desc: "A NoSQL database used for scalable applications." },
-  { icon: <FaReact size={60} className="text-blue-500 md:hover:text-blue-300 transition duration-300" />, name: "React", desc: "A JavaScript library for building interactive user interfaces." },
-  { icon: <FaNodeJs size={60} className="text-green-400 md:hover:text-green-200 transition duration-300" />, name: "Node.js", desc: "A JavaScript runtime for backend development." },
-  { icon: <SiExpress size={60} className="text-gray-500 md:hover:text-gray-300 transition duration-300" />, name: "Express", desc: "A minimal and flexible Node.js web framework." },
-  { icon: <SiLangchain size={60} className="text-blue-400 md:hover:text-blue-200 transition duration-300" />, name: "LangChain", desc: "A framework for developing AI applications." },
-  { icon: <SiPytorch size={60} className="text-orange-500 md:hover:text-orange-300 transition duration-300" />, name: "PyTorch", desc: "An open-source machine learning framework." },
-  { icon: <SiHuggingface size={60} className="text-yellow-300 md:hover:text-yellow-200 transition duration-300" />, name: "HuggingFace", desc: "An open-source AI models library." }
+  { icon: <FaPython size={60} className="text-yellow-500 group-hover:text-yellow-300 transition duration-300"/>, name: "Python", desc: "A powerful programming language for AI and web development."},
+  { icon: <SiMongodb size={60} className="text-green-500 group-hover:text-green-300 transition duration-300" />, name: "MongoDB", desc: "A NoSQL database used for scalable applications." },
+  { icon: <FaReact size={60} className="text-blue-500 group-hover:text-blue-300 transition duration-300" />, name: "React", desc: "A JavaScript library for building interactive user interfaces." },
+  { icon: <FaNodeJs size={60} className="text-green-400 group-hover:text-green-200 transition duration-300" />, name: "Node.js", desc: "A JavaScript runtime for backend development." },
+  { icon: <SiExpress size={60} className="text-gray-500 group-hover:text-gray-300 transition duration-300" />, name: "Express", desc: "A minimal and flexible Node.js web framework." },
+  { icon: <SiLangchain size={60} className="text-blue-400 group-hover:text-blue-200 transition duration-300" />, name: "LangChain", desc: "A framework for developing AI applications." },
+  { icon: <SiPytorch size={60} className="text-orange-500 group-hover:text-orange-300 transition duration-300" />, name: "PyTorch", desc: "An open-source machine learning framework." },
+  { icon: <SiHuggingface size={60} className="text-yellow-300 group-hover:text-yellow-200 transition duration-300" />, name: "HuggingFace", desc: "An open-source AI models library." }
 ];
 
 const Skills = () => {
@@ -30,14 +30,14 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div 
               key={index} 
-              className="flex items-center space-x-4 text-left border-2 border-transparent rounded-lg p-4 hover:border-blue-500 hover:animate-pulse transition duration-300"
+              className="group flex items-center space-x-4 text-left border-2 border-transparent rounded-lg p-4 
+              hover:border-blue-500 active:border-blue-500 focus:border-blue-500 
+              hover:animate-pulse active:animate-pulse focus:animate-pulse transition duration-300"
             >
               {skill.icon}
               <div>
                 <motion.h2 
-                  className="text-2xl sm:text-3xl font-bold text-white"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 200 }}
+                  className="text-2xl sm:text-3xl font-bold text-white group-hover:scale-105 group-focus:scale-105 group-active:scale-105 transition duration-300"
                 >
                   {skill.name}
                 </motion.h2>
