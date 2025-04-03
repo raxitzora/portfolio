@@ -4,14 +4,14 @@ import { SiMongodb, SiExpress, SiPytorch, SiLangchain, SiHuggingface } from 'rea
 import { motion } from 'framer-motion';
 
 const skills = [
-  { icon: <FaPython size={60} className="hover:text-yellow-500 transition duration-300" />, name: "Python", desc: "A powerful programming language for AI and web development." },
-  { icon: <SiMongodb size={60} className="hover:text-green-500 transition duration-300" />, name: "MongoDB", desc: "A NoSQL database used for scalable applications." },
-  { icon: <FaReact size={60} className="hover:text-blue-500 transition duration-300" />, name: "React", desc: "A JavaScript library for building interactive user interfaces." },
-  { icon: <FaNodeJs size={60} className="hover:text-green-400 transition duration-300" />, name: "Node.js", desc: "A JavaScript runtime for backend development." },
-  { icon: <SiExpress size={60} className="hover:text-gray-500 transition duration-300" />, name: "Express", desc: "A minimal and flexible Node.js web framework." },
-  { icon: <SiLangchain size={60} className="hover:text-blue-400 transition duration-300" />, name: "LangChain", desc: "A framework for developing AI applications." },
-  { icon: <SiPytorch size={60} className="hover:text-orange-500 transition duration-300" />, name: "PyTorch", desc: "An open-source machine learning framework." },
-  { icon: <SiHuggingface size={60} className="hover:text-yellow-300 transition duration-300" />, name: "HuggingFace", desc: "An open-source AI models library." }
+  { icon: <FaPython size={60} className="text-yellow-500 md:hover:text-yellow-300 transition duration-300"/>, name: "Python", desc: "A powerful programming language for AI and web development."},
+  { icon: <SiMongodb size={60} className="text-green-500 md:hover:text-green-300 transition duration-300" />, name: "MongoDB", desc: "A NoSQL database used for scalable applications." },
+  { icon: <FaReact size={60} className="text-blue-500 md:hover:text-blue-300 transition duration-300" />, name: "React", desc: "A JavaScript library for building interactive user interfaces." },
+  { icon: <FaNodeJs size={60} className="text-green-400 md:hover:text-green-200 transition duration-300" />, name: "Node.js", desc: "A JavaScript runtime for backend development." },
+  { icon: <SiExpress size={60} className="text-gray-500 md:hover:text-gray-300 transition duration-300" />, name: "Express", desc: "A minimal and flexible Node.js web framework." },
+  { icon: <SiLangchain size={60} className="text-blue-400 md:hover:text-blue-200 transition duration-300" />, name: "LangChain", desc: "A framework for developing AI applications." },
+  { icon: <SiPytorch size={60} className="text-orange-500 md:hover:text-orange-300 transition duration-300" />, name: "PyTorch", desc: "An open-source machine learning framework." },
+  { icon: <SiHuggingface size={60} className="text-yellow-300 md:hover:text-yellow-200 transition duration-300" />, name: "HuggingFace", desc: "An open-source AI models library." }
 ];
 
 const Skills = () => {
@@ -32,7 +32,7 @@ const Skills = () => {
               {skill.icon}
               <div>
                 <motion.h2 
-                  className="text-2xl sm:text-3xl font-bold"
+                  className="text-2xl sm:text-3xl font-bold text-white"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 200 }}
                 >
