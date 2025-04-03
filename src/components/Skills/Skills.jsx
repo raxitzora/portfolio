@@ -28,7 +28,10 @@ const Skills = () => {
           viewport={{ once: true }}
         >
           {skills.map((skill, index) => (
-            <motion.div key={index} className="flex items-center space-x-4 text-left">
+            <motion.div 
+              key={index} 
+              className="flex items-center space-x-4 text-left border-2 border-transparent rounded-lg p-4 hover:border-blue-500 hover:animate-pulse transition duration-300"
+            >
               {skill.icon}
               <div>
                 <motion.h2 

@@ -18,6 +18,11 @@ const Navbar = () => {
     return () => document.removeEventListener('click', handleOutsideClick);
   }, [menuOpen]);
 
+  // Close mobile menu when a link is clicked
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="h-20 w-full flex items-center justify-between px-6 lg:px-10 text-white sticky top-0 z-50 shadow-md bg-black">
       
@@ -34,9 +39,11 @@ const Navbar = () => {
             to={item.toLowerCase()}
             smooth={true}
             duration={500}
-            className="cursor-pointer hover:text-yellow-400 transition-all text-xl"
+            className="cursor-pointer hover:text-yellow-400 transition-all text-xl relative group"
           >
             {item}
+            {/* Hover Border Effect */}
+            <span className="absolute bottom-0 left-0 w-0 h-1 bg-yellow-400 group-hover:w-full transition-all duration-300 ease-in-out"></span>
           </Link>
         ))}
       </div>
@@ -55,9 +62,11 @@ const Navbar = () => {
       </button>
 
       {/* Mobile Menu */}
-      <div className={`fixed top-20 left-0 w-full bg-black text-white transition-transform transform ${
-        menuOpen ? "translate-y-0" : "-translate-y-full"
-      } md:hidden mobile-menu`}>
+      <div 
+        className={`fixed top-20 left-0 w-full bg-black text-white transition-transform transform ${
+          menuOpen ? "translate-y-0" : "-translate-y-full"
+        } md:hidden mobile-menu z-50`}
+      >
         <div className="flex flex-col items-center py-6 space-y-6">
           {["Home", "About", "Skills", "Projects"].map((item) => (
             <Link 
@@ -66,12 +75,12 @@ const Navbar = () => {
               smooth={true}
               duration={500}
               className="cursor-pointer text-xl py-2"
-              onClick={() => setMenuOpen(false)}
+              onClick={handleLinkClick}
             >
               {item}
             </Link>
           ))}
-          <a href="mailto:imraxitzora@gmail.com" className="text-xl py-2">
+          <a href="mailto:imraxitzora@gmail.com" className="text-xl py-2" onClick={handleLinkClick}>
             Contact Me
           </a>
         </div>
