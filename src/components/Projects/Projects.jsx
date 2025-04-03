@@ -7,38 +7,44 @@ const projects = [
   {
     image: cyberproject,
     title: "CyberAgent",
-    description: "Implemented CyberAgent which provides real-time information about security vulnerabilities and delivers cyber attack news."
+    description: "A real-time cyber intelligence system providing security vulnerability insights and attack news updates.",
   },
   {
     image: carproject,
     title: "Car Price Prediction",
-    description: "Developed a car price prediction tool using a Linear Regression model trained on historical car sales data. The project estimates prices for used cars based on various features like the car's name, company, year of manufacture, kilometers driven, and fuel type."
+    description: "A machine learning model that estimates used car prices based on features like brand, year, mileage, and fuel type.",
   },
 ];
 
 const Projects = () => {
   return (
-    <div className="border-2 solid bg-gray-900 p-4 sm:p-6 md:p-10 rounded-2xl md:rounded-4xl mt-8 md:mt-15" id='projects'>
-      <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-center text-white mb-8 md:mb-12'>Projects</h1>
-      {projects.map((project, index) => (
-        <div key={index} className='border-2 border-gray-700 p-4 md:p-5 flex flex-col md:flex-row items-center gap-6 md:gap-10 mb-8 md:mb-10 rounded-lg'>
-          <motion.img 
-            src={project.image} 
-            alt={`Project ${index + 1}`} 
-            className='w-full md:w-1/2 h-48 md:h-auto object-cover rounded-lg shadow-lg' 
-            whileHover={{ scale: 1.05 }}
-            animate={{ opacity: [0.5, 1], transition: { duration: 1, repeat: Infinity, repeatType: "reverse" } }}
-          />
+    <div id="projects" className="bg-gray-900 py-16 px-6">
+      <h1 className="text-5xl sm:text-6xl font-extrabold text-center text-white mb-12">Projects</h1>
 
-          <motion.div 
-            className='text-white font-bold text-base md:text-lg w-full md:w-1/2 border-2 border-yellow-200 p-4 rounded-lg hover:bg-blue-200 hover:text-gray-900 transition-all duration-300' 
-            whileHover={{ scale: 1.05 }}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            className="border border-gray-700 p-6 rounded-lg bg-gray-800/80 shadow-lg"
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 120 }}
           >
-            <h2 className='text-2xl md:text-3xl lg:text-4xl font-extrabold mb-2 text-gray-400'>{project.title}</h2>
-            <p className='text-xl md:text-2xl lg:text-3xl font-semibold'>{project.description}</p>
+            {/* Project Image */}
+            <motion.img
+              src={project.image}
+              alt={`Project ${index + 1}`}
+              className="w-full h-52 object-cover rounded-lg shadow-md"
+              whileHover={{ scale: 1.05 }}
+            />
+
+            {/* Project Details */}
+            <div className="mt-4 text-white">
+              <h2 className="text-3xl font-bold text-yellow-300 mb-2">{project.title}</h2>
+              <p className="text-lg text-gray-300">{project.description}</p>
+            </div>
           </motion.div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
