@@ -62,8 +62,8 @@ const Navbar = () => {
       </button>
 
       {/* Mobile Menu */}
-      <div 
-        className={`fixed top-20 left-0 w-full bg-black text-white transition-transform transform ${
+      <div
+        className={`fixed top-20 left-0 w-full bg-black text-white transition-all duration-300 transform ${
           menuOpen ? "translate-y-0" : "-translate-y-full"
         } md:hidden mobile-menu z-50`}
       >
