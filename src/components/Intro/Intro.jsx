@@ -39,7 +39,7 @@ const Intro = () => {
       
       {/* Profile Image */}
       <div className="mt-10 lg:mt-0 lg:ml-12 flex justify-center">
-        <img src={me} alt="profile" className="w-32 sm:w-48 md:w-64 lg:w-80 h-32 sm:h-48 md:h-64 lg:h-80 object-cover rounded-full shadow-lg" />
+        <img src={me} alt="profile" className="w-32 sm:w-48 md:w-64 lg:w-80 h-32 sm:h-48 md:h-64 lg:h-80 object-cover shadow-lg" />
       </div>
 
       {/* PDF Display */}
