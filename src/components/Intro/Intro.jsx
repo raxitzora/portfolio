@@ -20,11 +20,11 @@ const Intro = () => {
         </h1>
 
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mt-4 sm:mt-5 leading-tight">
-          Full-Stack AI Engineer
+          Full-Stack Engineer, AI Engineer, CyberSecurity Enthusiast
         </h2>
 
         <p className="text-gray-200 font-light text-lg sm:text-xl md:text-2xl mt-4 leading-relaxed">
-          I am a Full-Stack AI Engineer passionate about creating AI-powered software.
+          I am a Full-Stack AI Engineer passionate about creating AI-powered software, secure them with my CyberSecurity skills
         </p>
 
         {/* Hire Me Button */}
