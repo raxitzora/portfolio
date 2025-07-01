@@ -19,7 +19,7 @@ const Intro = () => {
           </span>
         </h1>
 
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-500 mt-4 sm:mt-5 leading-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-400 mt-4 sm:mt-5 leading-tight">
           Full-Stack Engineer, AI Engineer, CyberSecurity Enthusiast
         </h2>
 
