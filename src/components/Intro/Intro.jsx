@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import me from '../../assets/me.jpg';
 import hire from '../../assets/hire.jpg';
-import hirePdf from '../../assets/hire-aiengineer.pdf'; // Path to your PDF file
+import hirePdf from '../../assets/raxitzora.pdf'; // Path to your PDF file
 
 const Intro = () => {
   const [showPdf, setShowPdf] = useState(false);
