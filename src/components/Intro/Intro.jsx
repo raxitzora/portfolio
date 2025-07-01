@@ -23,7 +23,7 @@ const Intro = () => {
           Full-Stack Engineer, AI Engineer, CyberSecurity Enthusiast
         </h2>
 
-        <p className="text-gray-200 font-light text-lg sm:text-xl md:text-2xl mt-4 leading-relaxed">
+        <p className="text-gray-800 font-light text-lg sm:text-xl md:text-2xl mt-4 leading-relaxed">
           I am a Full-Stack AI Engineer passionate about creating AI-powered software, secure them with my CyberSecurity skills
         </p>
 
