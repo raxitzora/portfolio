@@ -11,7 +11,7 @@ const skills = [
   { icon: <SiExpress size={60} className="text-gray-500 transition duration-300" />, name: "Express", desc: "A minimal and flexible Node.js web framework." },
   { icon: <SiLangchain size={60} className="text-blue-400 transition duration-300" />, name: "LangChain", desc: "A framework for developing AI applications." },
   { icon: <SiPytorch size={60} className="text-orange-500 transition duration-300" />, name: "PyTorch", desc: "An open-source machine learning framework." },
-  { icon: <SiHuggingface size={60} className="text-yellow-300 transition duration-300" />, name: "HuggingFace", desc: "An open-source AI models library." }
+  { icon: <SiHuggingface size={60} className="text-yellow-300 transition duration-300" />, name: "HuggingFace", desc: "An open-source AI models library." },  
 ];
 
 const Skills = () => {
