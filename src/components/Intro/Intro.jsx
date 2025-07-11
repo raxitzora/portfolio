@@ -20,7 +20,7 @@ const Intro = () => {
         </h1>
 
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-400 mt-4 sm:mt-5 leading-tight">
-          Full-Stack Engineer, AI Engineer, CyberSecurity Enthusiast
+          Full-Stack Engineer, AI Enthusiast, CyberSecurity Enthusiast
         </h2>
 
         <p className="text-gray-200 font-light text-lg sm:text-xl md:text-2xl mt-4 leading-relaxed">
@@ -39,29 +39,28 @@ const Intro = () => {
       
       {/* Profile Image */}
       <div className="mt-10 lg:mt-0 lg:ml-12 flex justify-center">
-        <img src={me} alt="profile" className="w-32 sm:w-48 md:w-64 lg:w-80 h-32 sm:h-48 md:h-64 lg:h-84 object-cover shadow-lg" />
+        <img src={me} alt="profile" className="w-32 sm:w-48 md:w-64 lg:w-80 h-32 sm:h-48 md:h-64 lg:h-114 object-contain shadow-lg border-4 border-gray-300 rounded-full hover:border-yellow-600 hover:scale-105 transition-all duration-400 ease-in-out" />
       </div>
 
       {/* PDF Display */}
-      {showPdf && (
-        <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-70 flex items-center justify-center z-50 px-4">
-          <div className="bg-white p-5 sm:p-6 rounded-lg shadow-lg max-w-full sm:max-w-2xl">
-            <iframe 
-              src={hirePdf} 
-              width="100%" 
-              height="450px" 
-              title="Hire AI Engineer"
-              className="rounded-lg">
-            </iframe>
-            <button 
-              onClick={() => setShowPdf(false)} 
-              className="mt-4 bg-red-500 text-white py-2 px-4 rounded-full w-full sm:w-auto"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+{showPdf && (
+  <div className="fixed top-0 left-0 w-screen h-screen bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 overflow-hidden">
+    <div className="w-full h-full relative">
+      <iframe
+        src={hirePdf}
+        title="Hire AI Engineer"
+        className="w-full h-full"
+      ></iframe>
+      <button
+        onClick={() => setShowPdf(false)}
+        className="absolute top-4 right-4 bg-red-600 text-white py-2 px-4 rounded-full shadow-md hover:bg-red-700 transition"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
