@@ -5,14 +5,14 @@ const projects = [
     image: "/assets/cyberproject.jpg",
     title: "CyberAgent",
     description: "A real-time cyber intelligence system that monitors security vulnerabilities and delivers instant updates on active cyber threats.",
-    github: "https://github.com/your-username/cyberagent",
+    github: "https://github.com/raxitzora/Cyber_Agent",
     live: "https://cyberagent-demo.vercel.app"
   },
   {
     image: "/assets/carproject.png",
     title: "Car Price Prediction",
     description: "A machine learning project that predicts the price of used cars based on parameters like brand, model year, fuel type, and mileage.",
-    github: "https://github.com/your-username/car-price-prediction",
+    github: "https://github.com/raxitzora/Car-Price-Prediction",
     live: "https://car-price-prediction-demo.vercel.app"
   },
   {
