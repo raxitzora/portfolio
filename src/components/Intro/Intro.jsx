@@ -10,19 +10,19 @@ const Intro = () => {
     >
       {/* Intro Text Content */}
       <div className="max-w-lg sm:max-w-xl lg:max-w-2xl space-y-6">
-        <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-light leading-snug">
-          Welcome, <span className="font-bold">I'm</span>{' '}
-          <span className="block sm:inline text-yellow-400 text-4xl sm:text-5xl lg:text-6xl font-bold">
-            Raxit Zora
-          </span>
+        {/* ✅ SEO: Main Heading */}
+        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-snug">
+          Raxit Zora – Full Stack Developer, AI & Cybersecurity Enthusiast
         </h1>
 
-        <h2 className="text-gray-400 text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
-          Full-Stack Engineer · AI Enthusiast · CyberSecurity Enthusiast
-        </h2>
+        {/* ✅ Changed from h2 to p to maintain <h1> hierarchy */}
+        <p className="text-gray-400 text-xl sm:text-2xl font-semibold leading-tight">
+          I design scalable full-stack applications with a focus on AI integration and cybersecurity best practices.
+        </p>
 
+        {/* ✅ SEO keyword-enhanced description */}
         <p className="text-gray-200 text-lg sm:text-xl font-light leading-relaxed">
-          I build scalable full-stack applications powered by AI, and I secure them with deep knowledge of cybersecurity and ethical hacking.
+          Passionate about building intelligent web solutions using React, Node.js, MongoDB, Python, and securing them with ethical hacking knowledge. Based in India.
         </p>
 
         {/* Hire Me Button */}
@@ -32,7 +32,7 @@ const Intro = () => {
         >
           <img
             src="/assets/hire.jpg"
-            alt="Hire"
+            alt="Hire Raxit Zora button icon"
             className="h-6 w-6 object-contain"
           />
           <span className="text-lg font-medium">Hire Me</span>
@@ -43,31 +43,34 @@ const Intro = () => {
       <div className="mt-10 lg:mt-0 lg:ml-12 flex justify-center">
         <img
           src="/assets/me.jpg"
-          alt="Raxit Zora"
+          alt="Raxit Zora profile picture"
           className="w-40 sm:w-56 md:w-64 lg:w-80 h-40 sm:h-56 md:h-64 lg:h-80 object-cover rounded-full border-4 border-gray-300 shadow-lg hover:border-yellow-600 hover:scale-105 transition-all duration-300"
         />
       </div>
 
       {/* PDF Modal Viewer */}
-      {/* PDF Modal Viewer */}
-{showPdf && (
-  <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-    <div className="relative w-[90%] h-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
-      <iframe
-        src="/assets/raxitzora.pdf"
-        title="Raxit Zora Resume"
-        className="w-full h-full"
-      ></iframe>
-      <button
-        onClick={() => setShowPdf(false)}
-        className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full shadow hover:bg-red-700 transition"
-      >
-        Close
-      </button>
-    </div>
-  </div>
-)}
-
+      {showPdf && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Resume PDF Viewer"
+        >
+          <div className="relative w-[90%] h-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
+            <iframe
+              src="/assets/raxitzora.pdf"
+              title="Raxit Zora Resume PDF"
+              className="w-full h-full"
+            ></iframe>
+            <button
+              onClick={() => setShowPdf(false)}
+              className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full shadow hover:bg-red-700 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

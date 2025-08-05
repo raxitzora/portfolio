@@ -4,63 +4,68 @@ const projects = [
   {
     image: "/assets/cyberproject.jpg",
     title: "CyberAgent",
-    description: "A real-time cyber intelligence system that monitors security vulnerabilities and delivers instant updates on active cyber threats.",
+    description:
+      "CyberAgent is a real-time cyber intelligence system built using Node.js and MongoDB. It monitors global vulnerabilities and provides instant cybersecurity alerts.",
     github: "https://github.com/raxitzora/Cyber_Agent",
-    live: "https://cyberagent-demo.vercel.app"
+    live: "https://cyberagent-demo.vercel.app",
   },
   {
     image: "/assets/carproject.png",
     title: "Car Price Prediction",
-    description: "A machine learning project that predicts the price of used cars based on parameters like brand, model year, fuel type, and mileage.",
+    description:
+      "An ML-powered car price predictor using Python, Pandas, and Scikit-learn. It estimates resale value based on car brand, fuel type, mileage, and more.",
     github: "https://github.com/raxitzora/Car-Price-Prediction",
-    live: "https://car-price-prediction-demo.vercel.app"
+    live: "https://car-price-prediction-demo.vercel.app",
   },
   {
     image: "/assets/deckoidproject.png",
     title: "Deckoid Frontend Website",
-    description: "A frontend website using NextJS, framer-motion and gsap.",
+    description:
+      "A sleek frontend website built with Next.js, Framer Motion, and GSAP for smooth animations and responsive layout.",
     github: "https://github.com/raxitzora/Deckoid",
-    live: "https://deckoid.vercel.app/"
+    live: "https://deckoid.vercel.app/",
   },
 ];
 
 const Projects = () => {
   return (
-    <div id="projects" className="bg-gray-900 py-20 px-6">
-      <h1 className="text-5xl sm:text-6xl font-extrabold text-center text-white mb-16">
+    <section id="projects" className="bg-gray-900 py-20 px-6" aria-label="Projects Section">
+      <h2 className="text-5xl sm:text-6xl font-extrabold text-center text-white mb-16">
         My Projects
-      </h1>
+      </h2>
 
       <div className="max-w-6xl mx-auto flex flex-col gap-20">
         {projects.map((project, index) => (
-          <div
+          <article
             key={index}
             className="flex flex-col lg:flex-row items-center lg:items-start bg-gray-800/90 border border-gray-700 rounded-3xl shadow-xl overflow-hidden transition duration-300 hover:shadow-2xl"
           >
-            {/* Left: Project Image */}
+            {/* Project Image */}
             <img
               src={project.image}
-              alt={project.title}
+              alt={`Screenshot of ${project.title} project`}
               className="w-full lg:w-1/2 h-64 lg:h-full object-cover"
+              loading="lazy"
             />
 
-            {/* Right: Project Details */}
+            {/* Project Content */}
             <div className="w-full lg:w-1/2 p-6 sm:p-8 text-white flex flex-col justify-between h-full">
               <div>
-                <h2 className="text-3xl font-bold text-yellow-300 mb-3">
+                <h3 className="text-3xl font-bold text-yellow-300 mb-3">
                   {project.title}
-                </h2>
+                </h3>
                 <p className="text-lg text-gray-300 leading-relaxed">
                   {project.description}
                 </p>
               </div>
 
-              {/* Links */}
+              {/* Action Links */}
               <div className="mt-6 flex flex-wrap gap-4">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title={`View ${project.title} source code on GitHub`}
                   className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-full transition duration-200"
                 >
                   View on GitHub
@@ -69,16 +74,17 @@ const Projects = () => {
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
+                  title={`Visit live demo of ${project.title}`}
                   className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-5 rounded-full transition duration-200"
                 >
                   Live Demo
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
