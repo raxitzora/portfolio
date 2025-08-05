@@ -49,23 +49,25 @@ const Intro = () => {
       </div>
 
       {/* PDF Modal Viewer */}
-      {showPdf && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-          <div className="relative w-[90%] h-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
-            <iframe
-              src="/assets/raxitzora_resumepdf.png"
-              title="Raxit Zora Resume"
-              className="w-full h-full"
-            ></iframe>
-            <button
-              onClick={() => setShowPdf(false)}
-              className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full shadow hover:bg-red-700 transition"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      {/* PDF Modal Viewer */}
+{showPdf && (
+  <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+    <div className="relative w-[90%] h-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
+      <iframe
+        src="/assets/raxitzora.pdf"
+        title="Raxit Zora Resume"
+        className="w-full h-full"
+      ></iframe>
+      <button
+        onClick={() => setShowPdf(false)}
+        className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded-full shadow hover:bg-red-700 transition"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
     </section>
   );
 };
