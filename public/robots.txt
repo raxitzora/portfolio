@@ -1,4 +1,6 @@
+# robots.txt for https://raxitzora.vercel.app
+
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-nine-gamma-71.vercel.app/sitemap.xml
+Sitemap: https://raxitzora.vercel.app/sitemap.xml
