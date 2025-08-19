@@ -1,13 +1,12 @@
-import React from 'react';
 
 const projects = [
   {
     image: "/assets/cyberproject.jpg",
-    title: "CyberAgent",
+    title: "CyberSecAI",
     description:
-      "CyberAgent is a real-time cyber intelligence system built using Node.js and MongoDB. It monitors global vulnerabilities and provides instant cybersecurity alerts.",
-    github: "https://github.com/raxitzora/Cyber_Agent",
-    live: "https://cyberagent-demo.vercel.app",
+      "CyberSecurity Chatbot that can boost productivity and helpful to redteamers, blueteamers and bug bounty hunters. It is unfiltered Chatbot made with fastapi, Nextjs15, typescript and vercel AI developement kit(ADK)",
+    github: "https://github.com/raxitzora/CyberSecFrontend",
+    live: "https://cybersecurityai.vercel.app/",
   },
   {
     image: "/assets/carproject.png",
