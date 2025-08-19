@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const handleLinkClick = () => setMenuOpen(false);
 
-  const navItems = ["Home", "About", "Skills", "Projects"];
+  const navItems = ["Home", "About", "Skills","Experience" ,"Projects"];
 
   return (
     <nav className="h-28 w-full flex items-center justify-between px-8 lg:px-16 text-white sticky top-0 z-50 shadow-lg bg-black">
