@@ -44,8 +44,8 @@ const Intro = () => {
         <img
           src="/assets/me.jpg"
           alt="Raxit Zora profile picture"
-          className="w-40 sm:w-56 md:w-64 lg:w-80 h-40 sm:h-56 md:h-64 lg:h-80 object-cover rounded-full border-4 border-gray-300 shadow-lg hover:border-yellow-600 hover:scale-105 transition-all duration-300"
-        />
+              className="w-40 sm:w-56 md:w-64 lg:w-80 max-w-full aspect-square object-contain rounded-full border-4 border-gray-300 shadow-lg hover:border-yellow-600 hover:scale-105 transition-all duration-300 bg-black"
+  />
       </div>
 
       {/* PDF Modal Viewer */}
