@@ -10,7 +10,7 @@ const Navbar = () => {
   const handleLinkClick = () => setMenuOpen(false);
 
   return (
-    <nav className="h-20 w-full flex items-center justify-between px-6 lg:px-16 text-white sticky top-0 z-50 shadow-lg bg-black">
+    <nav className="h-20 w-full flex items-center justify-between px-6 lg:px-16 text-white sticky top-0 z-50 shadow-lg bg-gray-950">
       {/* Logo */}
       <a href="#home" className="flex items-center">
         <img
@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       {/* Contact Button (Desktop only) */}
-      <a href="mailto: imraxitzora@gmail.com" className="hidden md:flex">
+      <a href="mailto:imraxitzora@gmail.com" className="hidden md:flex">
         <button className="flex items-center gap-3 bg-white text-black px-6 py-3 text-lg rounded-full shadow-lg hover:bg-yellow-400 hover:text-white transition-all duration-300">
           Contact Me
           <img
