@@ -11,7 +11,7 @@ const Intro = () => {
       {/* Intro Text Content */}
       <div className="max-w-lg sm:max-w-xl lg:max-w-2xl space-y-6">
         <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-snug">
-          Raxit Zora – Full Stack Developer, AI & Cybersecurity Enthusiast
+          Raxit Zora – Full Stack Engineer, AI & Cybersecurity Enthusiast
         </h1>
 
         <p className="text-gray-400 text-xl sm:text-2xl font-semibold leading-tight">
