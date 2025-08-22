@@ -1,7 +1,49 @@
 @import "tailwindcss";
 
+body {
+  background-color: black;
+}
 
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-body{
-    background-color: black;
+.gradient-border {
+  position: relative;
+  border-radius: 16px; /* rounded corners */
+  padding: 5px; /* border thickness */
+  background: white; /* inner background for image */
+  overflow: hidden;
+}
+
+/* Animated border using ::before */
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #ff0057,
+    #ffae00,
+    #00f0ff,
+    #9d00ff,
+    #ff0057
+  );
+  animation: rotateBorder 4s linear infinite;
+  z-index: 0;
+}
+
+/* Keep the inside (your image) above the rotating border */
+.gradient-border > * {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px; /* keeps image nicely rounded inside */
 }

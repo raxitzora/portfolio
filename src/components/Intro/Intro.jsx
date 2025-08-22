@@ -1,26 +1,23 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const Intro = () => {
   const [showPdf, setShowPdf] = useState(false);
 
   return (
     <section
-      id="intro"
+      id="home"
       className="flex flex-col lg:flex-row items-center justify-center mt-10 px-4 sm:px-6 md:px-10 text-center lg:text-left w-full max-w-7xl mx-auto"
     >
       {/* Intro Text Content */}
       <div className="max-w-lg sm:max-w-xl lg:max-w-2xl space-y-6">
-        {/* ✅ SEO: Main Heading */}
         <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-snug">
           Raxit Zora – Full Stack Developer, AI & Cybersecurity Enthusiast
         </h1>
 
-        {/* ✅ Changed from h2 to p to maintain <h1> hierarchy */}
         <p className="text-gray-400 text-xl sm:text-2xl font-semibold leading-tight">
           I design scalable full-stack applications with a focus on AI integration and cybersecurity best practices.
         </p>
 
-        {/* ✅ SEO keyword-enhanced description */}
         <p className="text-gray-200 text-lg sm:text-xl font-light leading-relaxed">
           Passionate about building intelligent web solutions using React, Node.js, MongoDB, Python, and securing them with ethical hacking knowledge. Based in India.
         </p>
@@ -39,13 +36,17 @@ const Intro = () => {
         </button>
       </div>
 
-      {/* Profile Image */}
+      {/* Profile Image with moving red light effect */}
       <div className="mt-10 lg:mt-0 lg:ml-12 flex justify-center">
-        <img
-          src="/assets/me.jpg"
-          alt="Raxit Zora profile picture"
-              className="w-40 sm:w-56 md:w-64 lg:w-80 max-w-full aspect-square object-contain rounded-full border-4 border-gray-300 shadow-lg hover:border-yellow-600 hover:scale-105 transition-all duration-300 bg-black"
-  />
+        <div className="gradient-border">
+              <span className="red-snake-ring"></span>
+
+          <img
+            src="/assets/op-image.jpg"
+            alt="Raxit Zora profile picture"
+            className="w-40 sm:w-56 md:w-64 lg:w-80 max-w-full object-cover shadow-lg"
+          />
+        </div>
       </div>
 
       {/* PDF Modal Viewer */}
@@ -71,6 +72,29 @@ const Intro = () => {
           </div>
         </div>
       )}
+
+      {/* 🔥 Custom Animation Styles */}
+      <style jsx>{`
+        @keyframes glowing {
+          0% {
+            box-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red,
+              0 0 40px rgba(255, 0, 0, 0.8);
+          }
+          50% {
+            box-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px rgba(255, 0, 0, 0.9),
+              0 0 80px rgba(255, 0, 0, 1);
+          }
+          100% {
+            box-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red,
+              0 0 40px rgba(255, 0, 0, 0.8);
+          }
+        }
+
+        .animate-glow {
+          border-radius: 9999px;
+          animation: glowing 2s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };

@@ -7,6 +7,9 @@ import {
   SiLangchain,
   SiHuggingface,
   SiPostgresql,
+  SiKalilinux,
+  SiFastapi  ,
+  SiDocker 
 } from "react-icons/si";
 import {
   TbBrandJavascript,
@@ -74,6 +77,21 @@ const skills = [
     icon: <TbBrandFramerMotion size={60} className="text-yellow-300" aria-hidden="true" />,
     name: "Framer Motion",
     desc: "Animation library for React used to create smooth and interactive UI transitions.",
+  },
+  {
+    icon: <SiKalilinux size={60} className="text-white" aria-hidden="true" />,
+    name: "Kali-Linux",
+    desc: "A leading Linux distribution for penetration testing, ethical hacking, and cybersecurity research.",
+  },
+   {
+    icon: <SiFastapi size={60} className="text-[#079487]" aria-hidden="true" />,
+    name: "FastAPI",
+    desc: "A modern, fast Python web framework for building high-performance APIs with ease and reliability.",
+  },
+  {
+    icon: <SiDocker  size={60} className="text-blue-500" aria-hidden="true" />,
+    name: "Docker",
+    desc: "A powerful containerization platform that simplifies application deployment, scaling, and management.",
   },
 ];
 
