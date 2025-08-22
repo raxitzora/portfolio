@@ -38,7 +38,7 @@ const Navbar = () => {
       </div>
 
       {/* Contact Button (Desktop only) */}
-      <a href="mailto:imraxitzora@gmail.com" className="hidden md:flex">
+      <a href="mailto: imraxitzora@gmail.com" className="hidden md:flex">
         <button className="flex items-center gap-3 bg-white text-black px-6 py-3 text-lg rounded-full shadow-lg hover:bg-yellow-400 hover:text-white transition-all duration-300">
           Contact Me
           <img
