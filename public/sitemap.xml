@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="https://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Root page -->
   <url>
@@ -9,10 +9,15 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
 
-    <!-- Add your main images -->
+    <!-- Portfolio Images -->
     <image:image>
       <image:loc>https://raxitzora.vercel.app/assets/op-image.jpg</image:loc>
-      <image:title>Raxit Zora Portfolio Main Image</image:title>
+      <image:title>Raxit Zora Portfolio Main Banner</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/me.jpg</image:loc>
+      <image:title>Raxit Zora Profile Picture</image:title>
     </image:image>
 
     <image:image>
@@ -32,25 +37,12 @@
 
     <image:image>
       <image:loc>https://raxitzora.vercel.app/assets/raxit4.jpg</image:loc>
-      <image:title>Raxit Zora Project Showcase</image:title>
+      <image:title>Raxit Zora - Project Showcase 1</image:title>
     </image:image>
 
     <image:image>
       <image:loc>https://raxitzora.vercel.app/assets/raxit5.jpg</image:loc>
-      <image:title>Raxit Zora Project Showcase</image:title>
-    </image:image>
-  </url>
-
-  <!-- About Section -->
-  <url>
-    <loc>https://raxitzora.vercel.app/#about</loc>
-    <lastmod>2025-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-
-    <image:image>
-      <image:loc>https://raxitzora.vercel.app/assets/me.jpg</image:loc>
-      <image:title>About Raxit Zora</image:title>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
     </image:image>
   </url>
 
