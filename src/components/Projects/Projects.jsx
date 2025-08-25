@@ -8,14 +8,7 @@ const projects = [
     github: "https://github.com/raxitzora/CyberSecFrontend",
     live: "https://cybersecurityai.vercel.app/",
   },
-  {
-    image: "/assets/carproject.png",
-    title: "Car Price Prediction",
-    description:
-      "An ML-powered car price predictor using Python, Pandas, and Scikit-learn. It estimates resale value based on car brand, fuel type, mileage, and more.",
-    github: "https://github.com/raxitzora/Car-Price-Prediction",
-    live: "https://car-price-prediction-demo.vercel.app",
-  },
+
   {
     image: "/assets/deckoidproject.png",
     title: "Deckoid Frontend Website",

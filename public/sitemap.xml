@@ -46,4 +46,25 @@
     </image:image>
   </url>
 
+  <url>
+  <loc>https://medium.com/@imraxitzora/i-completed-develop-genai-apps-with-gemini-and-streamlit-by-google-cloud-0475e092b4aa</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+  <loc>https://medium.com/@imraxitzora/unlocking-multimodal-intelligence-my-journey-with-gemini-api-and-multimodal-rag-9b9037081a39</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+  <loc>https://medium.com/@imraxitzora/about</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>
