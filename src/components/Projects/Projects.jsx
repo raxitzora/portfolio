@@ -1,8 +1,7 @@
-
 const projects = [
   {
     image: "/assets/cyberproject.jpg",
-    title: "CyberSecAI",
+    title: "ZoroCyberSecAI Chatbot",
     description:
       "CyberSecurity Chatbot that can boost productivity and helpful to redteamers, blueteamers and bug bounty hunters. It is unfiltered Chatbot made with fastapi, Nextjs15, typescript and vercel AI developement kit(ADK)",
     github: "https://github.com/raxitzora/CyberSecFrontend",
@@ -21,7 +20,11 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-gray-900 py-20 px-6" aria-label="Projects Section">
+    <section
+      id="projects"
+      className="bg-gray-900 py-20 px-6"
+      aria-label="Projects Section"
+    >
       <h2 className="text-5xl sm:text-6xl font-extrabold text-center text-white mb-16">
         My Projects
       </h2>
