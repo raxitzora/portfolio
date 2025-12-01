@@ -59,7 +59,7 @@ const Intro = () => {
         >
           <div className="relative w-[90%] h-[90%] bg-white shadow-lg rounded-lg overflow-hidden">
             <iframe
-              src="/assets/raxitzora.pdf"
+              src="/assets/Raxitzora_CV.pdf"
               title="Raxit Zora Resume PDF"
               className="w-full h-full"
             ></iframe>
