@@ -4,7 +4,6 @@ import {
   SiMongodb,
   SiExpress,
   SiPytorch,
-  SiLangchain,
   SiHuggingface,
   SiPostgresql,
   SiKalilinux,
@@ -48,11 +47,7 @@ const skills = [
     name: "ExpressJS",
     desc: "Minimalist backend framework for Node.js used in REST APIs and web apps.",
   },
-  {
-    icon: <SiLangchain size={60} className="text-blue-400" aria-hidden="true" />,
-    name: "LangChain",
-    desc: "Framework for developing AI language models and intelligent agents.",
-  },
+  
   {
     icon: <SiPytorch size={60} className="text-orange-500" aria-hidden="true" />,
     name: "PyTorch",
