@@ -28,7 +28,7 @@ const Intro = () => {
           className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full shadow-md hover:bg-yellow-400 hover:text-white transition-all duration-300 mx-auto lg:mx-0"
         >
           <img
-            src="/assets/hire.jpg"
+            src="/assets/raxit9.jpg"
             alt="Hire Raxit Zora button icon"
             className="h-6 w-6 object-contain"
           />
