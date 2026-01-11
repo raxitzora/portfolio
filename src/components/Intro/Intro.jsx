@@ -42,7 +42,7 @@ const Intro = () => {
               <span className="red-snake-ring"></span>
 
           <img
-            src="/assets/op-image.jpg"
+            src="/assets/raxit9.jpg"
             alt="Raxit Zora profile picture"
             className="w-40 sm:w-56 md:w-64 lg:w-80 max-w-full object-cover shadow-lg"
           />
