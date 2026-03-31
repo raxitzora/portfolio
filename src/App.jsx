@@ -10,6 +10,9 @@ const App = () => {
   return (
     <div>
       <Navbar />
+
+
+      
       <Intro />
       <About />
       <Skills />
