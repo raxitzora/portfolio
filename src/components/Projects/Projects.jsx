@@ -16,6 +16,14 @@ const projects = [
     github: "https://github.com/raxitzora/Deckoid",
     live: "https://deckoid.vercel.app/",
   },
+    {
+    image: "/assets/frontend.png",
+    title: "Frontend Project",
+    description:
+      "Frontend Project built with javascript, nextjs, reactjs, tailwindcss, modern UI libraries and components. Easily accessible and responsive design for all devices.",
+    github: "https://github.com/raxitzora/",
+    live: "https://cosmic-tawny.vercel.app/",
+  },
 ];
 
 const Projects = () => {
