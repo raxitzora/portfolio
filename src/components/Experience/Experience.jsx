@@ -1,4 +1,4 @@
-// src/components/Experience/Experience.jsx
+import { motion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 
 const experiences = [
@@ -10,22 +10,28 @@ const experiences = [
     side: "left",
     skills: [
       "Python",
-      "Supervised algos",
-      "Unsupervised algos",
+      "Machine Learning",
       "Data Preprocessing",
       "Pandas",
-      "Numpy",
+      "NumPy",
       "Matplotlib",
       "Seaborn",
     ],
   },
+
   {
-    title: "Fullstack Engineer",
+    title: "Full Stack Engineer",
     company: "Deckoid Solution",
     type: "Hybrid",
-    duration: "July 2025 – PRESENT",
+    duration: "JULY 2025 – PRESENT",
     side: "right",
-    skills: ["Next.js", "JavaScript", "TailwindCSS", "MERN Stack", "UI/UX"],
+    skills: [
+      "Next.js",
+      "TailwindCSS",
+      "MERN Stack",
+      "UI/UX",
+      "API Development",
+    ],
   },
 ];
 
@@ -33,70 +39,259 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="w-full min-h-screen bg-gradient-to-b from-gray-950 to-black text-white py-20 px-4 sm:px-6 md:px-12"
+      className="relative min-h-screen bg-black overflow-hidden py-24 px-4 sm:px-6 lg:px-10"
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-16 sm:mb-20 tracking-wide">
-          <span className="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 text-transparent bg-clip-text">
-            Experience
-          </span>
+      {/* Background Grain */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.png')]" />
+
+      {/* Glow */}
+      <motion.div
+        animate={{
+          x: [0, 60, -60, 0],
+          y: [0, -40, 40, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-white/5 blur-[140px] rounded-full -translate-x-1/2 -translate-y-1/2"
+      />
+
+      {/* Header */}
+      <div className="relative z-20 mb-24">
+        <h2
+          className="text-[28px] sm:text-[50px] lg:text-[75px] leading-[0.9] uppercase text-white"
+          style={{
+            fontFamily: "'Press Start 2P', monospace",
+          }}
+        >
+          CAREER
+          <br />
+          LOG.
         </h2>
 
-        {/* Timeline */}
-        <div className="relative flex flex-col items-center">
-          {/* Vertical gradient line */}
-          <div className="absolute w-1 h-full bg-gradient-to-b from-yellow-400 via-pink-500 to-purple-600 rounded-full blur-[1px]" />
+        <p
+          className="mt-6 text-gray-500 text-sm tracking-[4px]"
+          style={{
+            fontFamily: "'VT323', monospace",
+          }}
+        >
+          PROFESSIONAL EXPERIENCE TIMELINE.
+        </p>
+      </div>
+
+      {/* Timeline */}
+      <div className="relative max-w-6xl mx-auto">
+
+        {/* Center Line */}
+        <div className="absolute left-1/2 top-0 hidden lg:block w-[1px] h-full bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
+        <div className="space-y-20">
 
           {experiences.map((exp, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`w-full flex flex-col md:flex-row ${
+              initial={{
+                opacity: 0,
+                y: 80,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.2,
+              }}
+              className={`relative flex items-center ${
                 exp.side === "left"
-                  ? "md:justify-end md:pr-12 lg:pr-16"
-                  : "md:justify-start md:pl-12 lg:pl-16"
-              } relative mb-16 sm:mb-20 md:mb-24`}
+                  ? "lg:justify-start"
+                  : "lg:justify-end"
+              }`}
             >
-              {/* Connector dot */}
-              <div
-                className={`absolute left-1/2 transform -translate-x-1/2 md:translate-x-0 ${
-                  exp.side === "left" ? "md:right-0" : "md:left-0"
-                } top-0 md:top-1/2 -translate-y-1/2 flex items-center`}
-              >
-                <span className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 border-4 border-gray-950 shadow-xl animate-pulse" />
+              {/* Timeline Dot */}
+              <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 z-30">
+                <motion.div
+                  animate={{
+                    scale: [1, 1.3, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
+                  className="w-5 h-5 rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.8)]"
+                />
               </div>
 
-              {/* Card */}
-              <div className="bg-gray-900/90 backdrop-blur-md border border-gray-700 hover:border-yellow-400 transition-all duration-300 rounded-2xl p-6 sm:p-8 md:p-10 shadow-2xl w-full md:max-w-xl text-center md:text-left">
-                <h3 className="text-xl sm:text-2xl font-bold flex items-center justify-center md:justify-start gap-2 text-yellow-400">
-                  <Briefcase className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-400" />
-                  {exp.title}
-                </h3>
-                <p className="text-lg sm:text-xl font-semibold text-gray-200 mt-2">
-                  {exp.company}
-                </p>
-                <p className="text-sm sm:text-base text-gray-400 italic mt-1">
-                  {exp.type} | {exp.duration}
-                </p>
+              {/* Experience Card */}
+              <motion.div
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+                className="
+                group
+                relative
+                w-full
+                lg:w-[46%]
+                border
+                border-[#2b2b2b]
+                bg-[#111111]
+                backdrop-blur-xl
+                overflow-hidden
+                transition-all
+                duration-500
+                hover:border-white/20
+                shadow-[0_10px_60px_rgba(0,0,0,0.7)]
+                "
+              >
+                {/* Top Line */}
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
-                {/* Skills */}
-                <div className="mt-5 sm:mt-6">
-                  <p className="text-sm sm:text-base font-semibold text-gray-300 mb-3">
-                    Skills:
-                  </p>
-                  <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3">
-                    {exp.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="bg-gradient-to-r from-gray-800 to-gray-700 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm md:text-base text-gray-200 hover:from-yellow-400 hover:to-pink-500 hover:text-black transition-all"
+                {/* Glow Overlay */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-br from-white/[0.03] to-transparent" />
+
+                {/* Content */}
+                <div className="relative z-10 p-6 sm:p-8 lg:p-10">
+
+                  {/* Header */}
+                  <div className="flex items-start justify-between gap-4 mb-8">
+
+                    <div className="flex gap-4">
+
+                      {/* Icon */}
+                      <div
+                        className="
+                        w-14
+                        h-14
+                        flex
+                        items-center
+                        justify-center
+                        border
+                        border-[#2b2b2b]
+                        bg-black
+                        "
                       >
-                        {skill}
-                      </span>
-                    ))}
+                        <Briefcase className="w-6 h-6 text-white" />
+                      </div>
+
+                      <div>
+                        <p className="text-[10px] tracking-[4px] uppercase text-gray-500 mb-2">
+                          Position
+                        </p>
+
+                        <h3 className="text-[22px] sm:text-[26px] font-semibold text-white tracking-wide">
+                          {exp.title}
+                        </h3>
+
+                        <p className="mt-2 text-gray-400 text-sm tracking-[2px] uppercase">
+                          {exp.company}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Duration */}
+                    <div className="text-right">
+                      <p className="text-[10px] tracking-[3px] uppercase text-gray-500 mb-2">
+                        Timeline
+                      </p>
+
+                      <p className="text-sm text-white">
+                        {exp.duration}
+                      </p>
+
+                      <p className="mt-2 text-xs text-gray-500 uppercase tracking-[2px]">
+                        {exp.type}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p
+                    className="
+                    text-[13px]
+                    sm:text-[14px]
+                    leading-[1.9]
+                    tracking-wide
+                    text-gray-400
+                    "
+                  >
+                    Worked on scalable software systems, frontend architectures,
+                    machine learning workflows, and high-performance digital
+                    experiences with modern development technologies.
+                  </p>
+
+                  {/* Skills */}
+                  <div className="mt-10">
+
+                    <div className="flex items-center justify-between mb-5">
+                      <p className="text-[10px] tracking-[4px] uppercase text-gray-500">
+                        Technologies
+                      </p>
+
+                      <div className="w-16 h-[1px] bg-white/20" />
+                    </div>
+
+                    <div className="flex flex-wrap gap-3">
+                      {exp.skills.map((skill, i) => (
+                        <motion.div
+                          key={i}
+                          whileHover={{
+                            y: -3,
+                          }}
+                          className="
+                          px-4
+                          py-2
+                          text-xs
+                          sm:text-sm
+                          border
+                          border-[#2a2a2a]
+                          bg-black
+                          text-gray-300
+                          tracking-wide
+                          uppercase
+                          hover:border-white/30
+                          hover:text-white
+                          transition-all
+                          duration-300
+                          "
+                        >
+                          {skill}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom HUD */}
+                  <div className="mt-10 flex justify-between items-center">
+
+                    <div className="w-full h-[3px] bg-[#252525] overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "88%" }}
+                        transition={{
+                          duration: 1.4,
+                        }}
+                        className="h-full bg-gradient-to-r from-white to-gray-500"
+                      />
+                    </div>
+
+                    <span className="ml-4 text-xs text-gray-500 tracking-[3px]">
+                      0{index + 1}
+                    </span>
                   </div>
                 </div>
-              </div>
-            </div>
+
+                {/* Corner Decorations */}
+                <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-white/20" />
+
+                <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-white/20" />
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
