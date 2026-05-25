@@ -97,105 +97,175 @@ const Loader = ({ onFinish }) => {
     });
 
     // FAKE LOADER SCROLL
-    const handleWheel = (e) => {
-      if (finishedRef.current) return;
+    // ==========================
+// SMOOTH CINEMATIC PROGRESS
+// ==========================
 
-      progressRef.current += e.deltaY * 0.0022;
+let currentProgress = 0;
 
-      progressRef.current = Math.max(
-        0,
-        Math.min(progressRef.current, 1)
-      );
+let targetProgress = 0;
 
-      const progress = progressRef.current;
+let touchStartY = 0;
 
-      // TITLE
-      gsap.to(titleRef.current, {
-        scale: 1 + progress * 2.2,
-        rotateX: progress * 18,
-        z: progress * 300,
-        y: -progress * 180,
-        opacity: 1 - progress,
-        filter: `blur(${progress * 28}px)`,
-        duration: 0.22,
-        ease: "power3.out",
-      });
+const updateAnimation = () => {
+  currentProgress +=
+    (targetProgress - currentProgress) * 0.08;
 
-      // SUBTITLE
-      gsap.to(subtitleRef.current, {
-        y: -progress * 50,
-        opacity: 1 - progress,
-        filter: `blur(${progress * 8}px)`,
-        duration: 0.22,
-        ease: "power3.out",
-      });
+  const progress = currentProgress;
 
-      // SCROLL INDICATOR
-      gsap.to(scrollIndicatorRef.current, {
-        opacity: 1 - progress * 2,
-        y: progress * 60,
-        duration: 0.22,
-        ease: "power3.out",
-      });
+  // TITLE
+  gsap.set(titleRef.current, {
+    scale: 1 + progress * 1.8,
 
-      // PARTICLES
-      gsap.to(particlesRef.current, {
-        opacity: 1 - progress * 1.5,
-        scale: 1 + progress * 0.4,
-        y: -progress * 120,
-        duration: 0.22,
-        ease: "power3.out",
-      });
+    rotateX: progress * 14,
 
-      // LOADER PANEL
-      gsap.to(loaderRef.current, {
-  yPercent: -progress * 100,
+    y: -progress * 140,
 
-  scale: 1 - progress * 0.08,
+    opacity: 1 - progress,
 
-  filter: `blur(${progress * 8}px)`,
+    filter: `blur(${progress * 18}px)`,
+  });
 
-  duration: 0.45,
+  // SUBTITLE
+  gsap.set(subtitleRef.current, {
+    y: -progress * 40,
 
-  ease: "expo.out",
-});
+    opacity: 1 - progress,
 
-      // COMPLETE
-      if (progress >= 1) {
-        finishedRef.current = true;
+    filter: `blur(${progress * 6}px)`,
+  });
 
-        gsap.to(loaderRef.current, {
-          opacity: 0,
-          duration: 0.45,
-          ease: "power2.out",
+  // INDICATOR
+  gsap.set(scrollIndicatorRef.current, {
+    opacity: 1 - progress * 2,
 
-          onComplete: () => {
-            document.body.style.overflow =
-              "auto";
+    y: progress * 50,
+  });
 
-            setHidden(true);
+  // PARTICLES
+  gsap.set(particlesRef.current, {
+    opacity: 1 - progress * 1.5,
 
-            if (onFinish) {
-              onFinish();
-            }
-          },
-        });
-      }
-    };
+    scale: 1 + progress * 0.25,
 
-    window.addEventListener(
-      "wheel",
-      handleWheel,
-      {
-        passive: true,
-      }
-    );
+    y: -progress * 80,
+  });
+
+  // PANEL
+  gsap.set(loaderRef.current, {
+    yPercent: -progress * 100,
+
+    scale: 1 - progress * 0.04,
+
+    filter: `blur(${progress * 5}px)`,
+  });
+
+  // COMPLETE
+  if (
+    progress >= 0.995 &&
+    !finishedRef.current
+  ) {
+    finishedRef.current = true;
+
+    gsap.to(loaderRef.current, {
+      opacity: 0,
+
+      duration: 0.7,
+
+      ease: "power2.out",
+
+      onComplete: () => {
+        document.body.style.overflow =
+          "auto";
+
+        setHidden(true);
+
+        if (onFinish) {
+          onFinish();
+        }
+      },
+    });
+  }
+
+  requestAnimationFrame(updateAnimation);
+};
+
+updateAnimation();
+
+// DESKTOP SCROLL
+const handleWheel = (e) => {
+  if (finishedRef.current) return;
+
+  targetProgress += e.deltaY * 0.0018;
+
+  targetProgress = Math.max(
+    0,
+    Math.min(targetProgress, 1)
+  );
+};
+
+// MOBILE TOUCH
+const handleTouchStart = (e) => {
+  touchStartY = e.touches[0].clientY;
+};
+
+const handleTouchMove = (e) => {
+  if (finishedRef.current) return;
+
+  const currentY = e.touches[0].clientY;
+
+  const delta =
+    touchStartY - currentY;
+
+  targetProgress += delta * 0.003;
+
+  targetProgress = Math.max(
+    0,
+    Math.min(targetProgress, 1)
+  );
+
+  touchStartY = currentY;
+};
+
+window.addEventListener(
+  "wheel",
+  handleWheel,
+  {
+    passive: true,
+  }
+);
+
+window.addEventListener(
+  "touchstart",
+  handleTouchStart,
+  {
+    passive: true,
+  }
+);
+
+window.addEventListener(
+  "touchmove",
+  handleTouchMove,
+  {
+    passive: true,
+  }
+);
 
     return () => {
-      window.removeEventListener(
-        "wheel",
-        handleWheel
-      );
+     window.removeEventListener(
+  "wheel",
+  handleWheel
+);
+
+window.removeEventListener(
+  "touchstart",
+  handleTouchStart
+);
+
+window.removeEventListener(
+  "touchmove",
+  handleTouchMove
+);
 
       document.body.style.overflow = "auto";
     };
@@ -273,7 +343,7 @@ const Loader = ({ onFinish }) => {
         />
 
         {/* PARTICLES */}
-        {[...Array(18)].map((_, i) => (
+        {[...Array(window.innerWidth < 768 ? 8 : 18)].map((_, i) => (
           <div
             key={i}
             ref={(el) =>
@@ -331,15 +401,16 @@ const Loader = ({ onFinish }) => {
   relative
   max-w-[1600px]
   mx-auto
-  text-[72px]
-  sm:text-[120px]
-  md:text-[160px]
-  lg:text-[220px]
-  xl:text-[260px]
+  text-[52px]
+sm:text-[90px]
+md:text-[140px]
+lg:text-[220px]
+xl:text-[260px]
   font-black
   uppercase
   leading-[0.82]
-  tracking-[-10px]
+  tracking-[-4px]
+sm:tracking-[-8px]
   text-white
   "
 >
@@ -425,8 +496,9 @@ const Loader = ({ onFinish }) => {
       backdrop-blur-xl
       px-5
       py-3
-      text-[10px]
-      sm:text-xs
+      text-[11px]
+sm:text-sm
+md:text-base
       tracking-[4px]
       text-zinc-300
       "
