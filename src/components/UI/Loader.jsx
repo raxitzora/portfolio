@@ -152,13 +152,19 @@ const updateAnimation = () => {
   });
 
   // PANEL
-  gsap.set(loaderRef.current, {
-    yPercent: -progress * 100,
+ gsap.set(loaderRef.current, {
+  yPercent: -progress * 100,
 
-    scale: 1 - progress * 0.04,
+  scale: 1 - progress * 0.08,
 
-    filter: `blur(${progress * 5}px)`,
-  });
+  rotateX: progress * 10,
+
+  transformPerspective: 2000,
+
+  filter: `blur(${progress * 8}px)`,
+
+  opacity: 1 - progress * 0.15,
+});
 
   // COMPLETE
   if (
@@ -366,297 +372,257 @@ window.removeEventListener(
       </div>
 
       {/* CONTENT */}
-      <div
-        className="
-        relative
-        z-20
-        w-full
-        h-full
-        flex
-        flex-col
-        items-center
-        justify-center
-        text-center
-        px-6
-        "
-      >
-        {/* TOP LABEL */}
-        <p
-          className="
-          mb-5
-          uppercase
-          tracking-[8px]
-          text-[10px]
-          sm:text-xl
-          text-red-500
-          "
-        >
-          Welcome To My Digital World
-        </p>
-
-        {/* TITLE */}
-      <h1
-  ref={titleRef}
+{/* CONTENT */}
+<div
   className="
   relative
-  max-w-[1600px]
-  mx-auto
-  text-[52px]
-sm:text-[90px]
-md:text-[140px]
-lg:text-[220px]
-xl:text-[260px]
-  font-black
-  uppercase
-  leading-[0.82]
-  tracking-[-4px]
-sm:tracking-[-8px]
-  text-white
-  "
->
-  {/* GLOW */}
-  <span
-    className="
-    absolute
-    inset-0
-    opacity-30
-    text-white
-    "
-  >
-    RAXIT
-  </span>
-
-  {/* MAIN */}
-  <span
-    className="
-    relative
-    block
-    bg-gradient-to-b
-    from-white
-    via-white
-    to-zinc-500
-    bg-clip-text
-    text-transparent
-    "
-  >
-    {"RAXIT".split("").map((char, i) => (
-      <span
-        key={i}
-        className="letter inline-block"
-      >
-        {char}
-      </span>
-    ))}
-  </span>
-
-  <span
-    className="
-    relative
-    block
-    ml-8
-    sm:ml-16
-    text-zinc-700
-    "
-  >
-    {"ZORA".split("").map((char, i) => (
-      <span
-        key={i}
-        className="letter inline-block"
-      >
-        {char}
-      </span>
-    ))}
-  </span>
-</h1>
-
-        {/* SUBTITLE */}
-       <div
-  ref={subtitleRef}
-  className="
-  mt-8
-  flex
-  flex-wrap
-  items-center
-  justify-center
-  gap-3
-  uppercase
-  "
->
-  {[
-    "FULL STACK ENGINEER",
-    "AI ENGINEER",
-    "CYBER SECURITY",
-  ].map((item, index) => (
-    <div
-      key={index}
-      className="
-      border
-      border-white/10
-      bg-white/[0.03]
-      backdrop-blur-xl
-      px-5
-      py-3
-      text-[11px]
-sm:text-sm
-md:text-base
-      tracking-[4px]
-      text-zinc-300
-      "
-    >
-      {item}
-    </div>
-  ))}
-</div>
-
-        {/* SCROLL INDICATOR */}
-        <div
-  ref={scrollIndicatorRef}
-  className="
-  absolute
-  bottom-10
-  left-1/2
-  -translate-x-1/2
+  z-20
+  w-full
+  h-full
   flex
   flex-col
   items-center
+  justify-center
+  overflow-hidden
+  px-6
   "
 >
-  {/* OUTER */}
+  {/* CENTER WRAPPER */}
   <div
+    ref={titleRef}
     className="
     relative
-    w-28
-    h-28
     flex
+    flex-col
     items-center
     justify-center
+    text-center
     "
   >
-    {/* ROTATING RING */}
-    <motion.div
-      animate={{
-        rotate: 360,
-      }}
-      transition={{
-        duration: 10,
-        repeat: Infinity,
-        ease: "linear",
-      }}
+    {/* SOFT CINEMATIC GLOW */}
+    <div
       className="
       absolute
-      inset-0
+      w-[500px]
+      h-[500px]
       rounded-full
-      border
-      border-white/10
+      bg-white/[0.06]
+      blur-[140px]
       "
     />
 
-    {/* CENTER DOT */}
-    <motion.div
+    {/* MAIN TITLE */}
+    <motion.h1
+      initial={{
+        opacity: 0,
+        y: 80,
+        scale: 0.9,
+      }}
       animate={{
-        scale: [1, 1.4, 1],
-        opacity: [0.4, 1, 0.4],
+        opacity: 1,
+        y: 0,
+        scale: 1,
       }}
       transition={{
-        duration: 2,
-        repeat: Infinity,
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1],
       }}
       className="
-      w-3
-      h-3
-      rounded-full
-      bg-white
-      shadow-[0_0_20px_rgba(255,255,255,0.8)]
+      relative
+      uppercase
+      font-black
+      text-white
+      leading-[0.9]
+      tracking-[-3px]
+      sm:tracking-[-5px]
+      text-[44px]
+      sm:text-[70px]
+      md:text-[110px]
+      lg:text-[150px]
+      xl:text-[180px]
       "
-    />
+    >
+      <span
+        className="
+        block
+        text-white/90
+        "
+      >
+        Welcome To
+      </span>
 
-    {/* LINE */}
+      <span
+        className="
+        block
+        bg-gradient-to-b
+        from-white
+        to-zinc-500
+        bg-clip-text
+        text-transparent
+        "
+      >
+        Developer's World
+      </span>
+    </motion.h1>
+
+    {/* SUBTLE LINE */}
     <motion.div
+      initial={{
+        opacity: 0,
+        scaleX: 0,
+      }}
       animate={{
-        y: [0, 14, 0],
+        opacity: 1,
+        scaleX: 1,
       }}
       transition={{
-        duration: 1.8,
-        repeat: Infinity,
+        delay: 0.4,
+        duration: 1,
       }}
       className="
-      absolute
-      top-16
-      w-[1px]
-      h-16
-      bg-gradient-to-b
-      from-white
+      mt-8
+      w-[120px]
+      h-[1px]
+      bg-gradient-to-r
+      from-transparent
+      via-white/50
       to-transparent
       "
     />
   </div>
 
-  {/* TEXT */}
-  <p
+  {/* SCROLL INDICATOR */}
+  <motion.div
+    ref={scrollIndicatorRef}
+    initial={{
+      opacity: 0,
+      y: 20,
+    }}
+    animate={{
+      opacity: 1,
+      y: 0,
+    }}
+    transition={{
+      delay: 0.8,
+      duration: 1,
+    }}
     className="
-    mt-5
-    uppercase
-    tracking-[6px]
-    text-[11px]
-    text-white
+    absolute
+    bottom-12
+    left-1/2
+    -translate-x-1/2
+    flex
+    flex-col
+    items-center
     "
   >
-    SCROLL TO ENTER
-  </p>
+    {/* DEVICE FRAME */}
+    <div
+      className="
+      relative
+      w-[72px]
+      h-[120px]
+      border
+      border-white/40
+      rounded-[32px]
+      bg-white/[0.02]
+      backdrop-blur-xl
+      overflow-hidden
+      shadow-[0_0_30px_rgba(255,255,255,0.08)]
+      "
+    >
+      {/* MOVING LIGHT */}
+      <motion.div
+        animate={{
+          y: [0, 70, 0],
+          opacity: [0.4, 1, 0.4],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+        absolute
+        left-1/2
+        top-4
+        -translate-x-1/2
+        w-[2px]
+        h-10
+        rounded-full
+        bg-gradient-to-b
+        from-white
+        to-transparent
+        "
+      />
+
+      {/* SCREEN GLOW */}
+      <div
+        className="
+        absolute
+        inset-0
+        bg-gradient-to-b
+        from-white/[0.08]
+        to-transparent
+        "
+      />
+    </div>
+
+    {/* SCROLL TEXT */}
+    <motion.p
+      animate={{
+        opacity: [0.5, 1, 0.5],
+        y: [0, 4, 0],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="
+      mt-6
+      uppercase
+      tracking-[7px]
+      text-[11px]
+      sm:text-xl
+      font-bold
+      text-white
+      "
+    >
+      SCROLL TO ENTER
+    </motion.p>
+  </motion.div>
 </div>
-      </div>
       {/* TRANSITION OVERLAY */}
-<div
+
+{/* CINEMATIC TRANSITION */}
+
+{/* PORTAL TRANSITION */}
+<motion.div
+  animate={{
+    scale: [1, 1.08, 1],
+    opacity: [0.04, 0.08, 0.04],
+  }}
+  transition={{
+    duration: 4,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
   className="
   absolute
   inset-0
   pointer-events-none
   "
 >
-  {/* TOP SHUTTER */}
-  <motion.div
-    animate={{
-      y: [0, -20, 0],
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
+  <div
     className="
     absolute
-    top-0
-    left-0
-    w-full
-    h-[20vh]
-    bg-gradient-to-b
-    from-white/[0.03]
-    to-transparent
+    inset-0
+    bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]
     "
   />
+</motion.div>
 
-  {/* BOTTOM SHUTTER */}
-  <motion.div
-    animate={{
-      y: [0, 20, 0],
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    className="
-    absolute
-    bottom-0
-    left-0
-    w-full
-    h-[20vh]
-    bg-gradient-to-t
-    from-white/[0.03]
-    to-transparent
-    "
-  />
-</div>
     </section>
   );
 };
