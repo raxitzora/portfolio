@@ -106,6 +106,7 @@ let currentProgress = 0;
 let targetProgress = 0;
 
 let touchStartY = 0;
+let hasTriggeredMobile = false;
 
 const updateAnimation = () => {
   currentProgress +=
@@ -220,17 +221,27 @@ const handleTouchMove = (e) => {
 
   const currentY = e.touches[0].clientY;
 
-  const delta =
-    touchStartY - currentY;
+  const delta = touchStartY - currentY;
 
-  targetProgress += delta * 0.003;
+  // ONE POWERFUL SWIPE
+  if (
+    Math.abs(delta) > 35 &&
+    !hasTriggeredMobile
+  ) {
+    hasTriggeredMobile = true;
 
-  targetProgress = Math.max(
-    0,
-    Math.min(targetProgress, 1)
-  );
-
-  touchStartY = currentY;
+    gsap.to(
+      { value: targetProgress },
+      {
+        value: 1,
+        duration: 1.4,
+        ease: "power4.inOut",
+        onUpdate() {
+          targetProgress = this.targets()[0].value;
+        },
+      }
+    );
+  }
 };
 
 window.addEventListener(
@@ -378,7 +389,7 @@ window.removeEventListener(
   relative
   z-20
   w-full
-  h-full
+  min-h-[100svh]
   flex
   flex-col
   items-center
@@ -431,7 +442,8 @@ window.removeEventListener(
       relative
       uppercase
       font-black
-      text-white
+      text-white/90
+drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]
       leading-[0.9]
       tracking-[-3px]
       sm:tracking-[-5px]
@@ -446,6 +458,7 @@ window.removeEventListener(
         className="
         block
         text-white/90
+drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]
         "
       >
         Welcome To
@@ -508,7 +521,8 @@ window.removeEventListener(
     }}
     className="
     absolute
-    bottom-12
+    bottom-8
+    sm:bottom-12
     left-1/2
     -translate-x-1/2
     flex
@@ -520,8 +534,10 @@ window.removeEventListener(
     <div
       className="
       relative
-      w-[72px]
-      h-[120px]
+      w-[58px]
+h-[96px]
+sm:w-[72px]
+sm:h-[120px]
       border
       border-white/40
       rounded-[32px]
@@ -582,11 +598,15 @@ window.removeEventListener(
       className="
       mt-6
       uppercase
-      tracking-[7px]
-      text-[11px]
-      sm:text-xl
+      tracking-[4px]
+sm:tracking-[7px]
+text-[10px]
+sm:text-xl
+text-center
+whitespace-nowrap
       font-bold
-      text-white
+     text-white/90
+drop-shadow-[0_0_12px_rgba(255,255,255,0.35)] 
       "
     >
       SCROLL TO ENTER
