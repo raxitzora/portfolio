@@ -1,283 +1,357 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
-const projects = [
+const works = [
   {
+    year: "2026",
+    title: "ZoroCyberSecAI",
+    subtitle: "AI-Powered Cybersecurity Workspace",
+    description:
+      "Designed and engineered an intelligent cybersecurity platform focused on offensive security workflows, AI-assisted operations, and real-time interaction systems for security researchers and red team environments.",
     image: "/assets/cyberproject.jpg",
-    title: "ZoroCyberSecAI Chatbot",
-    description:
-      "An advanced cybersecurity AI assistant built for red teamers, blue teamers, and bug bounty hunters using FastAPI, Next.js 15, TypeScript, and Vercel AI SDK.",
-    github: "https://github.com/raxitzora/CyberSecFrontend",
     live: "https://cybersecurityai.vercel.app/",
-    stack: [
-      "Next.js",
-      "FastAPI",
-      "TypeScript",
-      "AI SDK",
-      "Cybersecurity",
-    ],
+    github: "https://github.com/raxitzora/CyberSecFrontend",
+    metadata:
+      "Next.js 15 / FastAPI / AI Systems / Real-Time Architecture",
   },
 
   {
+    year: "2026",
+    title: "Deckoid",
+    subtitle: "Cinematic Frontend Experience",
+    description:
+      "Built a high-end immersive frontend experience blending cinematic motion systems, smooth storytelling transitions, and modern interaction design inspired by premium digital studios.",
     image: "/assets/deckoidproject.png",
-    title: "Deckoid Frontend Website",
-    description:
-      "A cinematic frontend engineering experience with smooth animations, immersive transitions, and modern UI architecture powered by GSAP and Framer Motion.",
-    github: "https://github.com/raxitzora/Deckoid",
     live: "https://deckoid.vercel.app/",
-    stack: [
-      "Next.js",
-      "Framer Motion",
-      "GSAP",
-      "TailwindCSS",
-      "UI/UX",
-    ],
+    github: "https://github.com/raxitzora/Deckoid",
+    metadata:
+      "GSAP / Framer Motion / Motion Systems / UI Engineering",
   },
 
   {
-    image: "/assets/frontend.png",
-    title: "Modern Frontend Platform",
+    year: "2026",
+    title: "Frontend Platform",
+    subtitle: "Modern Web Experience Engineering",
     description:
-      "Responsive frontend platform engineered with scalable React architecture, accessible UI systems, premium animations, and modern design patterns.",
-    github: "https://github.com/raxitzora/",
+      "Engineered a scalable frontend architecture focused on responsiveness, accessibility, premium interactions, and seamless user experience across modern devices.",
+    image: "/assets/frontend.png",
     live: "https://cosmic-tawny.vercel.app/",
-    stack: [
-      "React",
-      "Next.js",
-      "TailwindCSS",
-      "Animations",
-      "Responsive UI",
-    ],
+    github: "https://github.com/raxitzora/",
+    metadata:
+      "React / Next.js / Design Systems / Responsive Architecture",
   },
 ];
 
-const Projects = () => {
+const Work = () => {
   return (
     <section
-      id="projects"
-      className="relative min-h-screen bg-black overflow-hidden py-24 px-4 sm:px-6 lg:px-10"
+      id="work"
+      className="relative bg-black text-white overflow-hidden"
     >
-      {/* Background Grain */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.png')]" />
-
-      {/* Glow */}
-      <motion.div
-        animate={{
-          x: [0, 60, -60, 0],
-          y: [0, -40, 40, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-white/5 blur-[140px] rounded-full -translate-x-1/2 -translate-y-1/2"
-      />
-
-      {/* Header */}
-      <div className="relative z-20 mb-24">
-        <h2
-          className="text-[28px] sm:text-[50px] lg:text-[75px] leading-[0.9] uppercase text-white"
-          style={{
-            fontFamily: "'Press Start 2P', monospace",
+      {/* Background Glow */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            x: [0, 120, -120, 0],
+            y: [0, -80, 80, 0],
           }}
-        >
-          PROJECT
-          <br />
-          ARCHIVE.
-        </h2>
-
-        <p
-          className="mt-6 text-gray-500 text-sm tracking-[4px]"
-          style={{
-            fontFamily: "'VT323', monospace",
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
-        >
-          SELECTED DIGITAL EXPERIENCES.
-        </p>
+          className="
+          absolute
+          top-1/2
+          left-1/2
+          w-[800px]
+          h-[800px]
+          rounded-full
+          bg-white/[0.03]
+          blur-[160px]
+          -translate-x-1/2
+          -translate-y-1/2
+          "
+        />
       </div>
 
-      {/* Projects */}
-      <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+      {/* Header */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 pt-32 pb-20">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="
+          uppercase
+          tracking-[6px]
+          text-sm
+          text-gray-500
+          mb-6
+          "
+        >
+          Selected Work
+        </motion.p>
 
-        {projects.map((project, index) => (
-          <motion.article
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="
+          text-[48px]
+          sm:text-[90px]
+          lg:text-[140px]
+          font-[700]
+          leading-[0.9]
+          tracking-[-6px]
+          max-w-6xl
+          "
+        >
+          DIGITAL
+          <br />
+          EXPERIENCES
+        </motion.h2>
+      </div>
+
+      {/* Work Sections */}
+      <div className="relative z-10">
+        {works.map((work, index) => (
+          <section
             key={index}
-            initial={{
-              opacity: 0,
-              y: 100,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: index * 0.1,
-            }}
-            whileHover={{
-              y: -8,
-            }}
             className="
-            group
-            relative
-            overflow-hidden
-            border
-            border-[#2a2a2a]
-            bg-[#111111]
-            transition-all
-            duration-500
-            hover:border-white/20
-            shadow-[0_10px_80px_rgba(0,0,0,0.7)]
+            min-h-screen
+            border-t
+            border-white/10
+            flex
+            items-center
             "
           >
-            {/* Top HUD Line */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
-            <div className="grid lg:grid-cols-2">
-
+            <div
+              className={`
+              max-w-7xl
+              mx-auto
+              w-full
+              px-6
+              sm:px-10
+              grid
+              lg:grid-cols-2
+              gap-20
+              items-center
+              ${
+                index % 2 !== 0
+                  ? "lg:[&>*:first-child]:order-2"
+                  : ""
+              }
+              `}
+            >
               {/* Image */}
-              <div className="relative overflow-hidden">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scale: 0.92,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 1,
+                }}
+                className="
+                relative
+                overflow-hidden
+                rounded-[30px]
+                group
+                "
+              >
+                <div className="absolute inset-0 bg-black/20 z-10" />
 
                 <motion.img
                   whileHover={{
                     scale: 1.05,
                   }}
                   transition={{
-                    duration: 0.6,
+                    duration: 1,
                   }}
-                  src={project.image}
-                  alt={project.title}
+                  src={work.image}
+                  alt={work.title}
                   className="
                   w-full
-                  h-[280px]
-                  sm:h-[400px]
-                  lg:h-full
+                  h-[500px]
+                  sm:h-[650px]
                   object-contain
                   grayscale
-                  brightness-90
-                  contrast-125
-                  transition-all
-                  duration-700
                   group-hover:grayscale-0
-                  group-hover:brightness-100
+                  transition-all
+                  duration-1000
                   "
                 />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-
-                {/* HUD Label */}
-                <div className="absolute top-5 left-5 border border-white/20 bg-black/50 backdrop-blur-sm px-4 py-2">
-                  <p className="text-[10px] tracking-[4px] uppercase text-white/80">
-                    Project 0{index + 1}
+                {/* Floating Label */}
+                <div
+                  className="
+                  absolute
+                  top-6
+                  left-6
+                  z-20
+                  backdrop-blur-xl
+                  bg-black/40
+                  border
+                  border-white/10
+                  px-5
+                  py-3
+                  rounded-full
+                  "
+                >
+                  <p className="text-xs tracking-[4px] uppercase text-white/80">
+                    {work.year}
                   </p>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Content */}
-              <div className="relative p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 80,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  duration: 1,
+                }}
+                className="relative"
+              >
+                {/* Subtitle */}
+                <p
+                  className="
+                  uppercase
+                  tracking-[5px]
+                  text-sm
+                  text-gray-500
+                  mb-6
+                  "
+                >
+                  {work.subtitle}
+                </p>
 
-                {/* Glow Hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-br from-white/[0.02] to-transparent" />
+                {/* Title */}
+                <h3
+                  className="
+                  text-[42px]
+                  sm:text-[70px]
+                  leading-[0.95]
+                  tracking-[-3px]
+                  font-[700]
+                  mb-10
+                  "
+                >
+                  {work.title}
+                </h3>
 
-                <div className="relative z-10">
+                {/* Description */}
+                <p
+                  className="
+                  text-gray-400
+                  text-[16px]
+                  sm:text-[18px]
+                  leading-[2]
+                  max-w-xl
+                  "
+                >
+                  {work.description}
+                </p>
 
-                  {/* Header */}
-                  <div className="mb-8">
-
-                    <p className="text-[10px] tracking-[4px] uppercase text-gray-500 mb-3">
-                      Featured Build
-                    </p>
-
-                    <h3 className="text-[26px] sm:text-[38px] font-semibold text-white leading-tight">
-                      {project.title}
-                    </h3>
-                  </div>
-
-                  {/* Description */}
-                  <p
-                    className="
-                    text-[14px]
-                    sm:text-[15px]
-                    leading-[2]
-                    tracking-wide
-                    text-gray-400
-                    "
-                  >
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="mt-10">
-
-                    <div className="flex items-center justify-between mb-5">
-                      <p className="text-[10px] tracking-[4px] uppercase text-gray-500">
-                        Stack
-                      </p>
-
-                      <div className="w-16 h-[1px] bg-white/20" />
-                    </div>
-
-                    <div className="flex flex-wrap gap-3">
-                      {project.stack.map((tech, i) => (
-                        <motion.div
-                          key={i}
-                          whileHover={{
-                            y: -3,
-                          }}
-                          className="
-                          px-4
-                          py-2
-                          text-xs
-                          sm:text-sm
-                          border
-                          border-[#2a2a2a]
-                          bg-black
-                          text-gray-300
-                          tracking-wide
-                          uppercase
-                          hover:border-white/30
-                          hover:text-white
-                          transition-all
-                          duration-300
-                          "
-                        >
-                          {tech}
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
+                {/* Metadata */}
+                <div
+                  className="
+                  mt-12
+                  text-sm
+                  tracking-[3px]
+                  uppercase
+                  text-gray-500
+                  border-t
+                  border-white/10
+                  pt-8
+                  "
+                >
+                  {work.metadata}
                 </div>
 
-                {/* Bottom Actions */}
-                <div className="relative z-10 mt-10 flex flex-wrap gap-4">
-
+                {/* Buttons */}
+                <div className="flex flex-wrap gap-5 mt-14">
+                  {/* Live */}
                   <motion.a
                     whileHover={{
-                      y: -2,
+                      y: -3,
                     }}
                     whileTap={{
                       scale: 0.96,
                     }}
-                    href={project.github}
+                    href={work.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-                    flex
+                    group
+                    inline-flex
+                    items-center
+                    gap-3
+                    bg-white
+                    text-black
+                    px-8
+                    py-4
+                    rounded-full
+                    text-sm
+                    uppercase
+                    tracking-[3px]
+                    hover:bg-neutral-200
+                    transition-all
+                    duration-300
+                    "
+                  >
+                    Explore Experience
+
+                    <ArrowUpRight
+                      size={18}
+                      className="
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-1
+                      group-hover:-translate-y-1
+                      "
+                    />
+                  </motion.a>
+
+                  {/* Github */}
+                  <motion.a
+                    whileHover={{
+                      y: -3,
+                    }}
+                    whileTap={{
+                      scale: 0.96,
+                    }}
+                    href={work.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                    inline-flex
                     items-center
                     gap-3
                     border
-                    border-[#2b2b2b]
-                    bg-black
-                    px-5
-                    py-3
+                    border-white/10
+                    px-8
+                    py-4
+                    rounded-full
                     text-sm
-                    tracking-[2px]
                     uppercase
+                    tracking-[3px]
                     text-gray-300
                     hover:border-white/30
                     hover:text-white
@@ -286,73 +360,34 @@ const Projects = () => {
                     "
                   >
                     <Github size={18} />
-                    Github
-                  </motion.a>
-
-                  <motion.a
-                    whileHover={{
-                      y: -2,
-                    }}
-                    whileTap={{
-                      scale: 0.96,
-                    }}
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                    flex
-                    items-center
-                    gap-3
-                    border
-                    border-white/20
-                    bg-white
-                    text-black
-                    px-5
-                    py-3
-                    text-sm
-                    tracking-[2px]
-                    uppercase
-                    hover:bg-transparent
-                    hover:text-white
-                    transition-all
-                    duration-300
-                    "
-                  >
-                    <ExternalLink size={18} />
-                    Live Demo
+                    Source
                   </motion.a>
                 </div>
 
-                {/* Bottom Progress */}
-                <div className="mt-10 flex items-center justify-between">
-
-                  <div className="w-full h-[3px] bg-[#252525] overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "92%" }}
-                      transition={{
-                        duration: 1.5,
-                      }}
-                      className="h-full bg-gradient-to-r from-white to-gray-500"
-                    />
-                  </div>
-
-                  <span className="ml-4 text-xs text-gray-500 tracking-[3px]">
-                    0{index + 1}
-                  </span>
+                {/* Huge Background Number */}
+                <div
+                  className="
+                  absolute
+                  -top-24
+                  right-0
+                  text-[180px]
+                  sm:text-[240px]
+                  font-black
+                  text-white/[0.03]
+                  leading-none
+                  pointer-events-none
+                  select-none
+                  "
+                >
+                  0{index + 1}
                 </div>
-              </div>
+              </motion.div>
             </div>
-
-            {/* Corner Decorations */}
-            <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-white/20" />
-
-            <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-white/20" />
-          </motion.article>
+          </section>
         ))}
       </div>
     </section>
   );
 };
 
-export default Projects;
+export default Work;

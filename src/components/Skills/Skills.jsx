@@ -22,87 +22,255 @@ import {
 
 const skills = [
   {
-    icon: <FaPython size={42} className="text-yellow-500" />,
+    icon: (
+      <FaPython
+        size={34}
+        className="
+        text-yellow-400
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "Python",
-    desc: "Machine learning, backend systems, automation and AI engineering.",
+    category: "AI ENGINEERING",
+    desc: "Machine learning systems, backend architecture, automation pipelines and intelligent software engineering.",
   },
 
   {
-    icon: <TbBrandJavascript size={42} className="text-yellow-300" />,
+    icon: (
+      <TbBrandJavascript
+        size={34}
+        className="
+        text-yellow-300
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "JavaScript",
-    desc: "Interactive frontend systems and modern web applications.",
+    category: "FRONTEND SYSTEMS",
+    desc: "Interactive frontend engineering with scalable architectures and immersive user experiences.",
   },
 
   {
-    icon: <SiMongodb size={42} className="text-green-500" />,
+    icon: (
+      <SiMongodb
+        size={34}
+        className="
+        text-green-500
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "MongoDB",
-    desc: "Scalable NoSQL database architecture for modern applications.",
+    category: "DATABASE SYSTEMS",
+    desc: "Flexible NoSQL infrastructure engineered for modern production-grade applications.",
   },
 
   {
-    icon: <FaReact size={42} className="text-cyan-400" />,
-    name: "ReactJS",
-    desc: "Dynamic interfaces and component-driven frontend engineering.",
+    icon: (
+      <FaReact
+        size={34}
+        className="
+        text-cyan-400
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
+    name: "React",
+    category: "UI ENGINEERING",
+    desc: "Component-driven interfaces focused on responsiveness, performance and scalability.",
   },
 
   {
-    icon: <FaNodeJs size={42} className="text-green-400" />,
+    icon: (
+      <FaNodeJs
+        size={34}
+        className="
+        text-green-400
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "NodeJS",
-    desc: "Fast scalable backend runtime and API infrastructure.",
+    category: "BACKEND SYSTEMS",
+    desc: "Fast and scalable runtime environments powering APIs and real-time services.",
   },
 
   {
-    icon: <SiExpress size={42} className="text-gray-300" />,
-    name: "ExpressJS",
-    desc: "Minimal backend framework for secure REST APIs.",
+    icon: (
+      <SiExpress
+        size={34}
+        className="
+        text-gray-300
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
+    name: "Express",
+    category: "API ARCHITECTURE",
+    desc: "Secure REST infrastructure and lightweight backend engineering workflows.",
   },
 
   {
-    icon: <SiPytorch size={42} className="text-orange-500" />,
+    icon: (
+      <SiPytorch
+        size={34}
+        className="
+        text-orange-500
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "PyTorch",
-    desc: "Deep learning framework for neural network systems.",
+    category: "DEEP LEARNING",
+    desc: "Neural network systems, transformer experimentation and AI model engineering.",
   },
 
   {
-    icon: <SiHuggingface size={42} className="text-yellow-300" />,
+    icon: (
+      <SiHuggingface
+        size={34}
+        className="
+        text-yellow-300
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "HuggingFace",
-    desc: "LLM integration, NLP systems and transformer architectures.",
+    category: "LLM SYSTEMS",
+    desc: "Transformer integration, NLP workflows and intelligent conversational systems.",
   },
 
   {
-    icon: <TbBrandNextjs size={42} className="text-white" />,
-    name: "NextJS",
-    desc: "Production-grade React framework with SSR optimization.",
+    icon: (
+      <TbBrandNextjs
+        size={34}
+        className="
+        text-white
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
+    name: "Next.js",
+    category: "FULLSTACK ENGINEERING",
+    desc: "Production-grade frontend architecture with SSR optimization and modern rendering.",
   },
 
   {
-    icon: <SiPostgresql size={42} className="text-blue-400" />,
+    icon: (
+      <SiPostgresql
+        size={34}
+        className="
+        text-blue-400
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "PostgreSQL",
-    desc: "Advanced relational database systems and secure data handling.",
+    category: "DATA ENGINEERING",
+    desc: "Advanced relational database systems with structured and scalable data handling.",
   },
 
   {
-    icon: <TbBrandFramerMotion size={42} className="text-pink-400" />,
+    icon: (
+      <TbBrandFramerMotion
+        size={34}
+        className="
+        text-pink-400
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "Framer Motion",
-    desc: "Cinematic UI animation systems and smooth motion experiences.",
+    category: "MOTION DESIGN",
+    desc: "Cinematic animation systems and premium interaction-driven user experiences.",
   },
 
   {
-    icon: <SiKalilinux size={42} className="text-white" />,
+    icon: (
+      <SiKalilinux
+        size={34}
+        className="
+        text-white
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "Kali Linux",
-    desc: "Ethical hacking, penetration testing and cybersecurity research.",
+    category: "CYBER SECURITY",
+    desc: "Penetration testing workflows, ethical hacking environments and security research.",
   },
 
   {
-    icon: <SiFastapi size={42} className="text-[#00C7B7]" />,
+    icon: (
+      <SiFastapi
+        size={34}
+        className="
+        text-[#00C7B7]
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "FastAPI",
-    desc: "High-performance Python framework for scalable APIs.",
+    category: "HIGH PERFORMANCE APIs",
+    desc: "Modern Python backend systems optimized for speed, scalability and AI infrastructure.",
   },
 
   {
-    icon: <SiDocker size={42} className="text-blue-500" />,
+    icon: (
+      <SiDocker
+        size={34}
+        className="
+        text-blue-500
+        group-hover:rotate-[8deg]
+        group-hover:scale-110
+        transition-all
+        duration-500
+        "
+      />
+    ),
     name: "Docker",
-    desc: "Containerized deployment systems and infrastructure management.",
+    category: "DEVOPS",
+    desc: "Containerized infrastructure management and reproducible deployment workflows.",
   },
 ];
 
@@ -110,51 +278,74 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative min-h-screen bg-black overflow-hidden py-24 px-4 sm:px-6 lg:px-10"
+      className="relative bg-black text-white overflow-hidden py-32"
     >
-      {/* Background Grain */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.png')]" />
-
       {/* Background Glow */}
-      <motion.div
-        animate={{
-          x: [0, 50, -50, 0],
-          y: [0, -30, 30, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-white/5 blur-[140px] rounded-full -translate-x-1/2 -translate-y-1/2"
-      />
-
-      {/* Header */}
-      <div className="relative z-20 mb-20">
-        <h2
-          className="text-[30px] sm:text-[50px] lg:text-[75px] leading-[0.9] uppercase text-white"
-          style={{
-            fontFamily: "'Press Start 2P', monospace",
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            x: [0, 120, -120, 0],
+            y: [0, -80, 80, 0],
           }}
-        >
-          SKILL
-          <br />
-          MATRIX.
-        </h2>
-
-        <p
-          className="mt-6 text-gray-500 text-sm tracking-[4px]"
-          style={{
-            fontFamily: "'VT323', monospace",
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
-        >
-          SYSTEM CAPABILITIES LOADED.
-        </p>
+          className="
+          absolute
+          top-1/2
+          left-1/2
+          w-[800px]
+          h-[800px]
+          rounded-full
+          bg-white/[0.03]
+          blur-[160px]
+          -translate-x-1/2
+          -translate-y-1/2
+          "
+        />
       </div>
 
-      {/* Skills Grid */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      {/* Header */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 mb-24">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="
+          uppercase
+          tracking-[6px]
+          text-sm
+          text-gray-500
+          mb-6
+          "
+        >
+          Core Expertise
+        </motion.p>
 
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="
+          text-[50px]
+          sm:text-[90px]
+          lg:text-[140px]
+          font-[700]
+          leading-[0.9]
+          tracking-[-6px]
+          max-w-6xl
+          "
+        >
+          TECHNOLOGIES
+          <br />
+          I WORK WITH
+        </motion.h2>
+      </div>
+
+      {/* Skills List */}
+      <div className="relative z-10 border-t border-white/10">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
@@ -171,103 +362,144 @@ const Skills = () => {
             }}
             transition={{
               duration: 0.8,
-              delay: index * 0.05,
-            }}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
+              delay: index * 0.03,
             }}
             className="
             group
-            relative
-            overflow-hidden
-            border
-            border-[#2b2b2b]
-            bg-[#121212]
-            hover:border-white/20
-            transition-all
-            duration-500
-            p-6
-            sm:p-8
-            shadow-[0_10px_50px_rgba(0,0,0,0.5)]
+            border-b
+            border-white/10
             "
           >
-            {/* Top HUD Line */}
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-
-            {/* Hover Glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-br from-white/[0.03] to-transparent" />
-
-            {/* Card Header */}
-            <div className="flex items-center gap-5 mb-6">
-
-              {/* Icon Box */}
-              <div
-                className="
-                w-16
-                h-16
-                flex
-                items-center
-                justify-center
-                border
-                border-[#2b2b2b]
-                bg-black
-                group-hover:scale-110
-                transition-all
-                duration-500
-                "
-              >
-                {skill.icon}
-              </div>
-
-              {/* Skill Name */}
-              <div>
-                <p className="text-[10px] tracking-[4px] uppercase text-gray-500 mb-2">
-                  Capability
-                </p>
-
-                <h3 className="text-[20px] sm:text-[24px] font-semibold tracking-wide text-white">
-                  {skill.name}
-                </h3>
-              </div>
-            </div>
-
-            {/* Description */}
-            <p
+            <div
               className="
-              text-[13px]
-              sm:text-[14px]
-              leading-[1.9]
-              tracking-wide
-              text-gray-400
+              max-w-7xl
+              mx-auto
+              px-6
+              sm:px-10
+              py-10
+              grid
+              lg:grid-cols-[120px_1fr_2fr]
+              gap-10
+              items-center
+              transition-all
+              duration-500
+              group-hover:bg-white/[0.02]
               "
             >
-              {skill.desc}
-            </p>
-
-            {/* Bottom HUD */}
-            <div className="mt-8 flex justify-between items-center">
-              <div className="w-full h-[3px] bg-[#252525] overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "85%" }}
-                  transition={{
-                    duration: 1.2,
-                    delay: 0.2,
-                  }}
-                  className="h-full bg-gradient-to-r from-white to-gray-500"
-                />
+              {/* Number */}
+              <div
+                className="
+                text-[14px]
+                tracking-[4px]
+                text-gray-600
+                uppercase
+                "
+              >
+                0{index + 1}
               </div>
 
-              <span className="ml-4 text-xs text-gray-500 tracking-[2px]">
-                0{index + 1}
-              </span>
+              {/* Skill */}
+              <div className="flex items-center gap-6">
+                {/* Icon Box */}
+                <div
+                  className="
+                  w-20
+                  h-20
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-gradient-to-br
+                  from-white/[0.05]
+                  to-white/[0.02]
+                  backdrop-blur-xl
+                  flex
+                  items-center
+                  justify-center
+                  transition-all
+                  duration-500
+                  group-hover:scale-110
+                  group-hover:border-white/20
+                  group-hover:bg-white/[0.06]
+                  shadow-[0_0_30px_rgba(255,255,255,0.03)]
+                  "
+                >
+                  {skill.icon}
+                </div>
+
+                <div>
+                  <p
+                    className="
+                    text-[11px]
+                    uppercase
+                    tracking-[4px]
+                    text-gray-500
+                    mb-2
+                    "
+                  >
+                    {skill.category}
+                  </p>
+
+                  <h3
+                    className="
+                    text-[28px]
+                    sm:text-[40px]
+                    font-[600]
+                    tracking-[-2px]
+                    leading-none
+                    "
+                  >
+                    {skill.name}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div
+                className="
+                flex
+                items-center
+                justify-between
+                gap-10
+                "
+              >
+                <p
+                  className="
+                  text-gray-400
+                  text-[15px]
+                  sm:text-[17px]
+                  leading-[2]
+                  max-w-2xl
+                  "
+                >
+                  {skill.desc}
+                </p>
+
+                {/* Arrow */}
+                <motion.div
+                  whileHover={{
+                    x: 5,
+                  }}
+                  className="
+                  hidden
+                  lg:flex
+                  w-14
+                  h-14
+                  rounded-full
+                  border
+                  border-white/10
+                  items-center
+                  justify-center
+                  text-gray-500
+                  group-hover:text-white
+                  group-hover:border-white/20
+                  transition-all
+                  duration-500
+                  "
+                >
+                  →
+                </motion.div>
+              </div>
             </div>
-
-            {/* Corner Decoration */}
-            <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-white/20" />
-
-            <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-white/20" />
           </motion.div>
         ))}
       </div>

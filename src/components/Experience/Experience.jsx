@@ -6,12 +6,12 @@ const experiences = [
     title: "ML Engineer",
     company: "Unified Mentor",
     type: "Remote",
-    duration: "JAN 2025 – FEB 2025",
-    side: "left",
+    duration: "JAN 2025 — FEB 2025",
+    description:
+      "Worked on machine learning workflows, data preprocessing pipelines, predictive systems and AI-driven engineering solutions focused on scalable model experimentation and intelligent automation.",
     skills: [
       "Python",
       "Machine Learning",
-      "Data Preprocessing",
       "Pandas",
       "NumPy",
       "Matplotlib",
@@ -23,8 +23,9 @@ const experiences = [
     title: "Full Stack Engineer",
     company: "Deckoid Solution",
     type: "Hybrid",
-    duration: "JULY 2025 – PRESENT",
-    side: "right",
+    duration: "JULY 2025 — PRESENT",
+    description:
+      "Engineering scalable frontend systems, immersive UI experiences, modern backend architectures and high-performance digital products using modern full stack technologies.",
     skills: [
       "Next.js",
       "TailwindCSS",
@@ -39,261 +40,317 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative min-h-screen bg-black overflow-hidden py-24 px-4 sm:px-6 lg:px-10"
+      className="relative bg-black text-white overflow-hidden py-32"
     >
-      {/* Background Grain */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.png')]" />
-
-      {/* Glow */}
-      <motion.div
-        animate={{
-          x: [0, 60, -60, 0],
-          y: [0, -40, 40, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-white/5 blur-[140px] rounded-full -translate-x-1/2 -translate-y-1/2"
-      />
-
-      {/* Header */}
-      <div className="relative z-20 mb-24">
-        <h2
-          className="text-[28px] sm:text-[50px] lg:text-[75px] leading-[0.9] uppercase text-white"
-          style={{
-            fontFamily: "'Press Start 2P', monospace",
+      {/* Background Glow */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            x: [0, 120, -120, 0],
+            y: [0, -80, 80, 0],
           }}
-        >
-          CAREER
-          <br />
-          LOG.
-        </h2>
-
-        <p
-          className="mt-6 text-gray-500 text-sm tracking-[4px]"
-          style={{
-            fontFamily: "'VT323', monospace",
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
-        >
-          PROFESSIONAL EXPERIENCE TIMELINE.
-        </p>
+          className="
+          absolute
+          top-1/2
+          left-1/2
+          w-[800px]
+          h-[800px]
+          rounded-full
+          bg-white/[0.03]
+          blur-[160px]
+          -translate-x-1/2
+          -translate-y-1/2
+          "
+        />
       </div>
 
-      {/* Timeline */}
-      <div className="relative max-w-6xl mx-auto">
+      {/* Header */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 mb-24">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="
+          uppercase
+          tracking-[6px]
+          text-sm
+          text-gray-500
+          mb-6
+          "
+        >
+          Professional Journey
+        </motion.p>
 
-        {/* Center Line */}
-        <div className="absolute left-1/2 top-0 hidden lg:block w-[1px] h-full bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="
+          text-[50px]
+          sm:text-[90px]
+          lg:text-[140px]
+          font-[700]
+          leading-[0.9]
+          tracking-[-6px]
+          max-w-6xl
+          "
+        >
+          WORK
+          <br />
+          EXPERIENCE
+        </motion.h2>
+      </div>
 
-        <div className="space-y-20">
-
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 80,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.2,
-              }}
-              className={`relative flex items-center ${
-                exp.side === "left"
-                  ? "lg:justify-start"
-                  : "lg:justify-end"
-              }`}
+      {/* Experience List */}
+      <div className="relative z-10 border-t border-white/10">
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              y: 80,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.1,
+            }}
+            className="
+            group
+            border-b
+            border-white/10
+            "
+          >
+            <div
+              className="
+              max-w-7xl
+              mx-auto
+              px-6
+              sm:px-10
+              py-14
+              transition-all
+              duration-500
+              group-hover:bg-white/[0.02]
+              "
             >
-              {/* Timeline Dot */}
-              <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 z-30">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.3, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                  className="w-5 h-5 rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.8)]"
-                />
-              </div>
-
-              {/* Experience Card */}
-              <motion.div
-                whileHover={{
-                  y: -10,
-                  scale: 1.02,
-                }}
+              {/* Top Row */}
+              <div
                 className="
-                group
-                relative
-                w-full
-                lg:w-[46%]
-                border
-                border-[#2b2b2b]
-                bg-[#111111]
-                backdrop-blur-xl
-                overflow-hidden
-                transition-all
-                duration-500
-                hover:border-white/20
-                shadow-[0_10px_60px_rgba(0,0,0,0.7)]
+                flex
+                flex-col
+                lg:flex-row
+                lg:items-start
+                lg:justify-between
+                gap-10
                 "
               >
-                {/* Top Line */}
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-
-                {/* Glow Overlay */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 bg-gradient-to-br from-white/[0.03] to-transparent" />
-
-                {/* Content */}
-                <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-
-                  {/* Header */}
-                  <div className="flex items-start justify-between gap-4 mb-8">
-
-                    <div className="flex gap-4">
-
-                      {/* Icon */}
-                      <div
-                        className="
-                        w-14
-                        h-14
-                        flex
-                        items-center
-                        justify-center
-                        border
-                        border-[#2b2b2b]
-                        bg-black
-                        "
-                      >
-                        <Briefcase className="w-6 h-6 text-white" />
-                      </div>
-
-                      <div>
-                        <p className="text-[10px] tracking-[4px] uppercase text-gray-500 mb-2">
-                          Position
-                        </p>
-
-                        <h3 className="text-[22px] sm:text-[26px] font-semibold text-white tracking-wide">
-                          {exp.title}
-                        </h3>
-
-                        <p className="mt-2 text-gray-400 text-sm tracking-[2px] uppercase">
-                          {exp.company}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Duration */}
-                    <div className="text-right">
-                      <p className="text-[10px] tracking-[3px] uppercase text-gray-500 mb-2">
-                        Timeline
-                      </p>
-
-                      <p className="text-sm text-white">
-                        {exp.duration}
-                      </p>
-
-                      <p className="mt-2 text-xs text-gray-500 uppercase tracking-[2px]">
-                        {exp.type}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p
+                {/* Left */}
+                <div className="flex gap-6">
+                  {/* Icon */}
+                  <div
                     className="
-                    text-[13px]
-                    sm:text-[14px]
-                    leading-[1.9]
-                    tracking-wide
-                    text-gray-400
+                    w-20
+                    h-20
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-gradient-to-br
+                    from-white/[0.05]
+                    to-white/[0.02]
+                    backdrop-blur-xl
+                    flex
+                    items-center
+                    justify-center
+                    transition-all
+                    duration-500
+                    shadow-[0_0_30px_rgba(255,255,255,0.03)]
+                    group-hover:scale-110
+                    group-hover:border-white/20
                     "
                   >
-                    Worked on scalable software systems, frontend architectures,
-                    machine learning workflows, and high-performance digital
-                    experiences with modern development technologies.
-                  </p>
-
-                  {/* Skills */}
-                  <div className="mt-10">
-
-                    <div className="flex items-center justify-between mb-5">
-                      <p className="text-[10px] tracking-[4px] uppercase text-gray-500">
-                        Technologies
-                      </p>
-
-                      <div className="w-16 h-[1px] bg-white/20" />
-                    </div>
-
-                    <div className="flex flex-wrap gap-3">
-                      {exp.skills.map((skill, i) => (
-                        <motion.div
-                          key={i}
-                          whileHover={{
-                            y: -3,
-                          }}
-                          className="
-                          px-4
-                          py-2
-                          text-xs
-                          sm:text-sm
-                          border
-                          border-[#2a2a2a]
-                          bg-black
-                          text-gray-300
-                          tracking-wide
-                          uppercase
-                          hover:border-white/30
-                          hover:text-white
-                          transition-all
-                          duration-300
-                          "
-                        >
-                          {skill}
-                        </motion.div>
-                      ))}
-                    </div>
+                    <Briefcase
+                      className="
+                      w-8
+                      h-8
+                      text-cyan-400
+                      transition-all
+                      duration-500
+                      group-hover:rotate-[8deg]
+                      group-hover:scale-110
+                      "
+                    />
                   </div>
 
-                  {/* Bottom HUD */}
-                  <div className="mt-10 flex justify-between items-center">
+                  {/* Content */}
+                  <div>
+                    <p
+                      className="
+                      uppercase
+                      tracking-[4px]
+                      text-[11px]
+                      text-gray-500
+                      mb-3
+                      "
+                    >
+                      {exp.type}
+                    </p>
 
-                    <div className="w-full h-[3px] bg-[#252525] overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "88%" }}
-                        transition={{
-                          duration: 1.4,
-                        }}
-                        className="h-full bg-gradient-to-r from-white to-gray-500"
-                      />
-                    </div>
+                    <h3
+                      className="
+                      text-[34px]
+                      sm:text-[52px]
+                      leading-none
+                      tracking-[-3px]
+                      font-[700]
+                      "
+                    >
+                      {exp.title}
+                    </h3>
 
-                    <span className="ml-4 text-xs text-gray-500 tracking-[3px]">
-                      0{index + 1}
-                    </span>
+                    <p
+                      className="
+                      mt-4
+                      text-gray-400
+                      text-[16px]
+                      uppercase
+                      tracking-[4px]
+                      "
+                    >
+                      {exp.company}
+                    </p>
                   </div>
                 </div>
 
-                {/* Corner Decorations */}
-                <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-white/20" />
+                {/* Right */}
+                <div className="lg:text-right">
+                  <p
+                    className="
+                    text-[13px]
+                    uppercase
+                    tracking-[4px]
+                    text-gray-500
+                    mb-3
+                    "
+                  >
+                    Timeline
+                  </p>
 
-                <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-white/20" />
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
+                  <p
+                    className="
+                    text-white
+                    text-[18px]
+                    sm:text-[22px]
+                    font-medium
+                    "
+                  >
+                    {exp.duration}
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom */}
+              <div
+                className="
+                mt-14
+                grid
+                lg:grid-cols-[1.3fr_1fr]
+                gap-16
+                items-start
+                "
+              >
+                {/* Description */}
+                <p
+                  className="
+                  text-gray-400
+                  text-[16px]
+                  sm:text-[18px]
+                  leading-[2]
+                  max-w-3xl
+                  "
+                >
+                  {exp.description}
+                </p>
+
+                {/* Skills */}
+                <div>
+                  <p
+                    className="
+                    uppercase
+                    tracking-[4px]
+                    text-[11px]
+                    text-gray-500
+                    mb-6
+                    "
+                  >
+                    Technologies
+                  </p>
+
+                  <div className="flex flex-wrap gap-3">
+                    {exp.skills.map((skill, i) => (
+                      <motion.div
+                        key={i}
+                        whileHover={{
+                          y: -3,
+                        }}
+                        className="
+                        px-5
+                        py-3
+                        rounded-full
+                        border
+                        border-white/10
+                        bg-white/[0.03]
+                        text-sm
+                        text-gray-300
+                        tracking-[2px]
+                        uppercase
+                        transition-all
+                        duration-300
+                        hover:border-white/20
+                        hover:bg-white/[0.06]
+                        hover:text-white
+                        "
+                      >
+                        {skill}
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Number */}
+              <div
+                className="
+                mt-14
+                border-t
+                border-white/10
+                pt-8
+                "
+              >
+                <div
+                  className="
+                  text-[14px]
+                  tracking-[4px]
+                  uppercase
+                  text-gray-600
+                  "
+                >
+                  0{index + 1}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
