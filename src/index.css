@@ -1,14 +1,67 @@
 @import "tailwindcss";
 
-
-body {
-  background-color: black;
+html {
+  scroll-behavior: auto;
 }
 
+body {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GLOBAL SELECTION */
+::selection {
+  background: white;
+  color: black;
+}
+
+/* REMOVE BLUE TAP */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* SMOOTH GPU */
+img,
+video,
+canvas,
+svg {
+  transform: translateZ(0);
+}
+
+/* PREMIUM WEBSITE REVEAL */
+@keyframes fadeWebsite {
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(1.02)
+      translateY(40px);
+
+    filter: blur(12px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0px);
+
+    filter: blur(0px);
+  }
+}
+
+/* ROTATING BORDER */
 @keyframes rotateBorder {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -16,20 +69,28 @@ body {
 
 .gradient-border {
   position: relative;
-  border-radius: 16px; /* rounded corners */
-  padding: 5px; /* border thickness */
-  background: white; /* inner background for image */
+
+  border-radius: 16px;
+
+  padding: 5px;
+
+  background: white;
+
   overflow: hidden;
 }
 
-/* Animated border using ::before */
+/* ANIMATED BORDER */
 .gradient-border::before {
   content: "";
+
   position: absolute;
+
   top: -50%;
   left: -50%;
+
   width: 200%;
   height: 200%;
+
   background: conic-gradient(
     from 0deg,
     #ff0057,
@@ -38,13 +99,36 @@ body {
     #9d00ff,
     #ff0057
   );
+
   animation: rotateBorder 4s linear infinite;
+
   z-index: 0;
 }
 
-/* Keep the inside (your image) above the rotating border */
+/* INNER CONTENT */
 .gradient-border > * {
   position: relative;
+
   z-index: 1;
-  border-radius: 12px; /* keeps image nicely rounded inside */
+
+  border-radius: 12px;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }

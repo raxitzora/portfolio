@@ -3,8 +3,6 @@ import { useState } from "react";
 import {
   motion,
   AnimatePresence,
-  useScroll,
-  useTransform,
 } from "framer-motion";
 
 import {
@@ -26,6 +24,7 @@ import {
 import {
   FiSmartphone,
 } from "react-icons/fi";
+
 import { Server } from "lucide-react";
 
 const techStack = [
@@ -33,22 +32,27 @@ const techStack = [
     icon: <AiOutlineRobot />,
     title: "AI Systems",
   },
+
   {
     icon: <SiCyberdefenders />,
     title: "Cybersecurity",
   },
+
   {
     icon: <FaLaptopCode />,
     title: "Frontend",
   },
+
   {
-    icon:<Server />,
+    icon: <Server />,
     title: "Backend",
   },
+
   {
     icon: <MdCloud />,
     title: "Cloud",
   },
+
   {
     icon: <FiSmartphone />,
     title: "Mobile Apps",
@@ -56,21 +60,8 @@ const techStack = [
 ];
 
 const Intro = () => {
-  const [showResume, setShowResume] = useState(false);
-
-  const { scrollYProgress } = useScroll();
-
-  const heroY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -150]
-  );
-
-  const heroOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.35],
-    [1, 0]
-  );
+  const [showResume, setShowResume] =
+    useState(false);
 
   return (
     <>
@@ -78,7 +69,8 @@ const Intro = () => {
         id="home"
         className="
         relative
-        min-h-screen
+        min-h-[100svh]
+        pt-20
         bg-black
         overflow-hidden
         px-4
@@ -88,9 +80,7 @@ const Intro = () => {
         items-center
         "
       >
-        {/* =========================
-            BACKGROUND
-        ========================== */}
+        {/* BACKGROUND */}
 
         {/* Noise */}
         <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.png')]" />
@@ -100,8 +90,8 @@ const Intro = () => {
           className="
           absolute
           inset-0
-          opacity-[0.03]
-          [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)]
+          opacity-[0.02]
+          [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)]
           [background-size:70px_70px]
           "
         />
@@ -131,19 +121,22 @@ const Intro = () => {
           "
         />
 
-        {/* HUD Lines */}
+        {/* VIGNETTE */}
+        <div
+          className="
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_center,transparent_0%,black_90%)]
+          "
+        />
+
+        {/* SIDE LINES */}
         <div className="hidden lg:block absolute left-6 top-0 bottom-0 w-px bg-white/10" />
+
         <div className="hidden lg:block absolute right-6 top-0 bottom-0 w-px bg-white/10" />
 
-        {/* =========================
-            MAIN CONTENT
-        ========================== */}
-
-        <motion.div
-          style={{
-            y: heroY,
-            opacity: heroOpacity,
-          }}
+        {/* CONTENT */}
+        <div
           className="
           relative
           z-20
@@ -152,7 +145,7 @@ const Intro = () => {
           mx-auto
           "
         >
-          {/* Top Meta */}
+          {/* TOP BAR */}
           <motion.div
             initial={{
               opacity: 0,
@@ -164,6 +157,7 @@ const Intro = () => {
             }}
             transition={{
               duration: 0.8,
+              delay: 0.2,
             }}
             className="
             flex
@@ -176,8 +170,8 @@ const Intro = () => {
               className="
               text-[10px]
               sm:text-xs
-              tracking-[5px]
               uppercase
+              tracking-[5px]
               text-gray-500
               "
             >
@@ -199,56 +193,72 @@ const Intro = () => {
             >
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
 
-              <p className="text-[10px] uppercase tracking-[4px] text-gray-400">
+              <p
+                className="
+                text-[10px]
+                uppercase
+                tracking-[4px]
+                text-gray-400
+                "
+              >
                 Available For Work
               </p>
             </div>
           </motion.div>
 
-          {/* Main Layout */}
-          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-16 items-center">
-
+          {/* MAIN GRID */}
+          <div
+            className="
+            grid
+            lg:grid-cols-[1.2fr_0.8fr]
+            gap-16
+            items-center
+            "
+          >
             {/* LEFT */}
-            <div>
-
-              {/* Heading */}
-              <motion.h1
-                initial={{
-                  opacity: 0,
-                  y: 80,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 1,
-                }}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 80,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 1.2,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              {/* TITLE */}
+              <h1
                 className="
-                text-[48px]
-                sm:text-[72px]
-                md:text-[96px]
-                lg:text-[120px]
+                text-[52px]
+                sm:text-[80px]
+                md:text-[110px]
+                lg:text-[140px]
                 font-black
-                leading-[0.9]
-                tracking-[-3px]
                 uppercase
+                leading-[0.9]
+                tracking-[-4px]
+                sm:tracking-[-6px]
                 text-white
                 "
               >
                 RAXIT
+
                 <br />
 
-                <span className="text-gray-400">
+                <span className="text-gray-500">
                   ZORA
                 </span>
-              </motion.h1>
+              </h1>
 
-              {/* Role */}
+              {/* ROLE TAGS */}
               <motion.div
                 initial={{
                   opacity: 0,
-                  y: 30,
+                  y: 20,
                 }}
                 animate={{
                   opacity: 1,
@@ -259,7 +269,7 @@ const Intro = () => {
                   delay: 0.2,
                 }}
                 className="
-                mt-6
+                mt-8
                 flex
                 flex-wrap
                 gap-3
@@ -267,21 +277,21 @@ const Intro = () => {
               >
                 {[
                   "Full Stack Engineer",
-                  "AI Engineering",
-                  "Cybersecurity",
+                  "AI Engineer",
+                  "Cyber Security",
                 ].map((item, index) => (
                   <div
                     key={index}
                     className="
                     border
-                    border-[#2a2a2a]
+                    border-[#222]
                     bg-[#111]
                     px-4
                     py-2
-                    text-xs
-                    sm:text-sm
-                    tracking-[3px]
+                    text-[10px]
+                    sm:text-xs
                     uppercase
+                    tracking-[3px]
                     text-gray-300
                     "
                   >
@@ -290,11 +300,11 @@ const Intro = () => {
                 ))}
               </motion.div>
 
-              {/* Description */}
+              {/* DESCRIPTION */}
               <motion.p
                 initial={{
                   opacity: 0,
-                  y: 30,
+                  y: 20,
                 }}
                 animate={{
                   opacity: 1,
@@ -311,21 +321,21 @@ const Intro = () => {
                 text-sm
                 sm:text-lg
                 leading-[2]
-                tracking-wide
                 "
               >
-                Building cinematic digital experiences,
-                scalable AI systems, secure backend
-                architectures, and futuristic web
-                applications with modern engineering
-                practices and premium user interfaces.
+                Building cinematic digital
+                experiences, AI systems,
+                scalable full-stack platforms,
+                and secure architectures with
+                modern engineering practices and
+                premium user experiences.
               </motion.p>
 
-              {/* Buttons */}
+              {/* BUTTONS */}
               <motion.div
                 initial={{
                   opacity: 0,
-                  y: 30,
+                  y: 20,
                 }}
                 animate={{
                   opacity: 1,
@@ -342,6 +352,7 @@ const Intro = () => {
                 gap-5
                 "
               >
+                {/* PROJECTS */}
                 <a
                   href="#projects"
                   className="
@@ -352,12 +363,11 @@ const Intro = () => {
                   border-white/20
                   px-8
                   py-4
-                  text-sm
+                  text-xs
+                  sm:text-sm
                   uppercase
                   tracking-[3px]
                   text-white
-                  transition-all
-                  duration-500
                   "
                 >
                   <span className="relative z-20">
@@ -376,20 +386,38 @@ const Intro = () => {
                     "
                   />
 
-                  <span className="absolute inset-0 flex items-center justify-center text-black opacity-0 group-hover:opacity-100 z-30 transition duration-500">
+                  <span
+                    className="
+                    absolute
+                    inset-0
+                    flex
+                    items-center
+                    justify-center
+                    text-black
+                    opacity-0
+                    group-hover:opacity-100
+                    transition
+                    duration-500
+                    z-30
+                    "
+                  >
                     View Projects
                   </span>
                 </a>
 
+                {/* RESUME */}
                 <button
-                  onClick={() => setShowResume(true)}
+                  onClick={() =>
+                    setShowResume(true)
+                  }
                   className="
                   border
-                  border-[#2a2a2a]
+                  border-[#222]
                   bg-[#111]
                   px-8
                   py-4
-                  text-sm
+                  text-xs
+                  sm:text-sm
                   uppercase
                   tracking-[3px]
                   text-gray-300
@@ -399,23 +427,24 @@ const Intro = () => {
                   duration-300
                   "
                 >
-                  Download Resume
+                  Resume
                 </button>
               </motion.div>
-            </div>
+            </motion.div>
 
             {/* RIGHT */}
             <motion.div
               initial={{
                 opacity: 0,
-                x: 100,
+                x: 80,
               }}
               animate={{
                 opacity: 1,
                 x: 0,
               }}
               transition={{
-                duration: 1,
+                duration: 1.2,
+                delay: 0.2,
               }}
               className="hidden lg:block"
             >
@@ -423,55 +452,75 @@ const Intro = () => {
                 className="
                 relative
                 border
-                border-[#2a2a2a]
-                bg-[#111111]
+                border-[#222]
+                bg-[#111]
                 p-8
                 overflow-hidden
                 "
               >
-                {/* Top Line */}
+                {/* TOP LIGHT */}
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
-                {/* Cards */}
+                {/* TECH GRID */}
                 <div className="grid grid-cols-2 gap-4">
+                  {techStack.map(
+                    (item, index) => (
+                      <motion.div
+                        key={index}
+                        whileHover={{
+                          y: -6,
+                        }}
+                        className="
+                        border
+                        border-[#222]
+                        bg-black
+                        p-6
+                        transition-all
+                        duration-500
+                        hover:border-white/20
+                        "
+                      >
+                        <div className="text-3xl text-white mb-4">
+                          {item.icon}
+                        </div>
 
-                  {techStack.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{
-                        y: -6,
-                      }}
-                      className="
-                      group
-                      border
-                      border-[#222]
-                      bg-black
-                      p-6
-                      transition-all
-                      duration-500
-                      hover:border-white/20
-                      "
-                    >
-                      <div className="text-3xl text-white mb-4">
-                        {item.icon}
-                      </div>
-
-                      <p className="text-xs uppercase tracking-[3px] text-gray-400">
-                        {item.title}
-                      </p>
-                    </motion.div>
-                  ))}
+                        <p
+                          className="
+                          text-xs
+                          uppercase
+                          tracking-[3px]
+                          text-gray-400
+                          "
+                        >
+                          {item.title}
+                        </p>
+                      </motion.div>
+                    )
+                  )}
                 </div>
 
-                {/* Status */}
+                {/* STATUS */}
                 <div className="mt-10">
-
                   <div className="flex justify-between mb-4">
-                    <p className="text-[10px] uppercase tracking-[4px] text-gray-500">
+                    <p
+                      className="
+                      text-[10px]
+                      uppercase
+                      tracking-[4px]
+                      text-gray-500
+                      "
+                    >
                       System Status
                     </p>
 
-                    <p className="text-[10px] uppercase tracking-[4px] text-gray-500">
+                    <p
+                      className="
+                      text-[10px]
+                      uppercase
+                      tracking-[4px]
+                      text-gray-500
+                      "
+                    >
                       99%
                     </p>
                   </div>
@@ -487,20 +536,22 @@ const Intro = () => {
                       transition={{
                         duration: 2,
                       }}
-                      className="h-full bg-gradient-to-r from-white to-gray-500"
+                      className="
+                      h-full
+                      bg-gradient-to-r
+                      from-white
+                      to-gray-500
+                      "
                     />
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
-      {/* =========================
-          RESUME MODAL
-      ========================== */}
-
+      {/* RESUME MODAL */}
       <AnimatePresence>
         {showResume && (
           <motion.div
@@ -543,7 +594,7 @@ const Intro = () => {
               max-w-6xl
               h-[90vh]
               border
-              border-[#2a2a2a]
+              border-[#222]
               bg-[#111]
               overflow-hidden
               "
@@ -555,7 +606,9 @@ const Intro = () => {
               />
 
               <button
-                onClick={() => setShowResume(false)}
+                onClick={() =>
+                  setShowResume(false)
+                }
                 className="
                 absolute
                 top-5
