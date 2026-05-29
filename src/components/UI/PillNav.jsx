@@ -226,48 +226,96 @@ const PillNav = ({
   };
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[1000]">
-      <nav
-        className={`w-full md:w-max flex items-center justify-between md:justify-start box-border px-4 md:px-0 ${className}`}
-        aria-label="Primary"
-        style={cssVars}
-      >
-        {isRouterLink(items?.[0]?.href) ? (
-          <Link
-            to={items[0].href}
-            aria-label="Home"
-            onMouseEnter={handleLogoEnter}
-            role="menuitem"
-            ref={el => {
-              logoRef.current = el;
-            }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
-            style={{
-              width: 'var(--nav-h)',
-              height: 'var(--nav-h)',
-              background: 'var(--base, #000)'
-            }}
-          >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
-          </Link>
-        ) : (
-          <a
-            href={items?.[0]?.href || '#'}
-            aria-label="Home"
-            onMouseEnter={handleLogoEnter}
-            ref={el => {
-              logoRef.current = el;
-            }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
-            style={{
-              width: 'var(--nav-h)',
-              height: 'var(--nav-h)',
-              background: 'var(--base, #000)'
-            }}
-          >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
-          </a>
-        )}
+    <div className="fixed top-4 left-0 right-0 px-3 z-[1000]">
+     <nav
+  className={`
+    w-full
+    flex
+    items-center
+    justify-between
+    md:justify-start
+    gap-2
+    ${className}
+  `}
+  aria-label="Primary"
+  style={cssVars}
+>
+       {isRouterLink(items?.[0]?.href) ? (
+  <Link
+    to={items[0].href}
+    aria-label="Home"
+    onMouseEnter={handleLogoEnter}
+    role="menuitem"
+    ref={(el) => {
+      logoRef.current = el;
+    }}
+    className="
+rounded-full
+inline-flex
+items-center
+justify-center
+overflow-hidden
+shrink-0
+min-w-[42px]
+min-h-[42px]
+z-50
+"
+    style={{
+      width: "42px",
+      height: "42px",
+      background: "var(--base, #000)",
+    }}
+  >
+    <img
+      src={logo}
+      alt={logoAlt}
+      ref={logoImgRef}
+      className="
+        w-full
+        h-full
+        object-cover
+        rounded-full
+        block
+      "
+    />
+  </Link>
+) : (
+  <a
+    href={items?.[0]?.href || "#"}
+    aria-label="Home"
+    onMouseEnter={handleLogoEnter}
+    ref={(el) => {
+      logoRef.current = el;
+    }}
+    className="
+      rounded-full
+      inline-flex
+      items-center
+      justify-center
+      overflow-hidden
+      shrink-0
+      z-50
+    "
+    style={{
+      width: "42px",
+      height: "42px",
+      background: "var(--base, #000)",
+    }}
+  >
+    <img
+      src={logo}
+      alt={logoAlt}
+      ref={logoImgRef}
+      className="
+        w-full
+        h-full
+        object-cover
+        rounded-full
+        block
+      "
+    />
+  </a>
+)}
 
         <div
           ref={navItemsRef}
@@ -383,11 +431,15 @@ const PillNav = ({
         >
           <span
             className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }}
+            style={{
+  background: "#fff"
+}}
           />
           <span
             className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }}
+            style={{
+  background: "#fff"
+}}
           />
         </button>
       </nav>
