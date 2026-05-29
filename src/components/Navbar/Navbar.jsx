@@ -7,9 +7,9 @@ const Navbar = () => {
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
+    { label: "Projects Work ", href: "#projects" },
   ];
-
+  
   return (
     <header className="fixed top-0 left-0 w-full h-20 bg-black/80 backdrop-blur-sm border-b border-white/20 flex items-center justify-between px-4 md:px-6 lg:px-12 z-[1000]">
       {/* Left side: logo and navigation via PillNav */}

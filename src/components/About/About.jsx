@@ -102,9 +102,9 @@ const About = () => {
           max-w-6xl
           "
         >
-          ENGINEERING
+          ABOUT MY
           <br />
-          EXPERIENCES
+          ENGINEERING
         </motion.h2>
       </div>
 

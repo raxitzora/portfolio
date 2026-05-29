@@ -406,29 +406,66 @@ const Intro = () => {
                 </a>
 
                 {/* RESUME */}
-                <button
-                  onClick={() =>
-                    setShowResume(true)
-                  }
-                  className="
-                  border
-                  border-[#222]
-                  bg-[#111]
-                  px-8
-                  py-4
-                  text-xs
-                  sm:text-sm
-                  uppercase
-                  tracking-[3px]
-                  text-gray-300
-                  hover:border-white/20
-                  hover:text-white
-                  transition-all
-                  duration-300
-                  "
-                >
-                  Resume
-                </button>
+               {/* RESUME */}
+<a
+  href="/assets/Resume_Raxitzora.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+  group
+  relative
+  overflow-hidden
+  border
+  border-[#222]
+  bg-[#111]
+  px-8
+  py-4
+  text-xs
+  sm:text-sm
+  uppercase
+  tracking-[3px]
+  text-gray-300
+  transition-all
+  duration-500
+  hover:border-white
+  hover:shadow-[0_0_30px_rgba(255,255,255,0.15)]
+  "
+>
+  <span className="relative z-20 transition-colors duration-500 group-hover:text-black">
+    Resume
+  </span>
+
+  <div
+    className="
+    absolute
+    inset-0
+    bg-white
+    -translate-x-full
+    group-hover:translate-x-0
+    transition-transform
+    duration-500
+    ease-out
+    "
+  />
+
+  <span
+    className="
+    absolute
+    inset-0
+    flex
+    items-center
+    justify-center
+    text-black
+    opacity-0
+    group-hover:opacity-100
+    transition-all
+    duration-500
+    z-30
+    "
+  >
+    Resume
+  </span>
+</a>
               </motion.div>
             </motion.div>
 
@@ -551,89 +588,7 @@ const Intro = () => {
         </div>
       </section>
 
-      {/* RESUME MODAL */}
-      <AnimatePresence>
-        {showResume && (
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            className="
-            fixed
-            inset-0
-            bg-black/95
-            z-[999999]
-            flex
-            items-center
-            justify-center
-            p-4
-            "
-          >
-            <motion.div
-              initial={{
-                scale: 0.9,
-                opacity: 0,
-              }}
-              animate={{
-                scale: 1,
-                opacity: 1,
-              }}
-              exit={{
-                scale: 0.9,
-                opacity: 0,
-              }}
-              className="
-              relative
-              w-full
-              max-w-6xl
-              h-[90vh]
-              border
-              border-[#222]
-              bg-[#111]
-              overflow-hidden
-              "
-            >
-              <iframe
-                src="/assets/Resume_Raxitzora.pdf"
-                title="Resume"
-                className="w-full h-full"
-              />
-
-              <button
-                onClick={() =>
-                  setShowResume(false)
-                }
-                className="
-                absolute
-                top-5
-                right-5
-                border
-                border-white/20
-                bg-black/80
-                px-5
-                py-3
-                text-xs
-                uppercase
-                tracking-[3px]
-                text-white
-                hover:bg-white
-                hover:text-black
-                transition-all
-                duration-300
-                "
-              >
-                Close
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+  
     </>
   );
 };

@@ -116,11 +116,11 @@ const updateAnimation = () => {
 
   // TITLE
   gsap.set(titleRef.current, {
-    scale: 1 + progress * 1.8,
+    scale: 1 + progress * 0.35,
 
-    rotateX: progress * 14,
+    rotateX: progress * 3,
 
-    y: -progress * 140,
+    y: -progress * 60,
 
     opacity: 1 - progress,
 
@@ -156,13 +156,13 @@ const updateAnimation = () => {
  gsap.set(loaderRef.current, {
   yPercent: -progress * 100,
 
-  scale: 1 - progress * 0.08,
+  scale: 1 - progress * 0.03,
 
-  rotateX: progress * 10,
+  rotateX: progress * 2,
 
   transformPerspective: 2000,
 
-  filter: `blur(${progress * 8}px)`,
+  filter: `blur(${progress * 3}px)`,
 
   opacity: 1 - progress * 0.15,
 });
@@ -393,7 +393,8 @@ window.removeEventListener(
   flex
   flex-col
   items-center
-  justify-center
+  justify-between
+py-20
   overflow-hidden
   px-6
   "
@@ -447,11 +448,11 @@ drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]
       leading-[0.9]
       tracking-[-3px]
       sm:tracking-[-5px]
-      text-[44px]
-      sm:text-[70px]
-      md:text-[110px]
-      lg:text-[150px]
-      xl:text-[180px]
+      text-[32px]
+sm:text-[60px]
+md:text-[90px]
+lg:text-[140px]
+xl:text-[180px]
       "
     >
       <span
@@ -600,12 +601,12 @@ sm:h-[120px]
       uppercase
       tracking-[4px]
 sm:tracking-[7px]
-text-[10px]
+text-[12px]
 sm:text-xl
 text-center
 whitespace-nowrap
-      font-bold
-     text-white/90
+      font-extrabold
+     text-red-500
 drop-shadow-[0_0_12px_rgba(255,255,255,0.35)] 
       "
     >

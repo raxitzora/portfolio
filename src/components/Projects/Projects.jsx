@@ -45,7 +45,7 @@ const works = [
 const Work = () => {
   return (
     <section
-      id="work"
+      id="projects"
       className="relative bg-black text-white overflow-hidden"
     >
       {/* Background Glow */}
@@ -106,9 +106,9 @@ const Work = () => {
           max-w-6xl
           "
         >
-          DIGITAL
+          SHOWCASING
           <br />
-          EXPERIENCES
+          WORKS
         </motion.h2>
       </div>
 
