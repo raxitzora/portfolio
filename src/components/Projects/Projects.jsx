@@ -310,6 +310,7 @@ const Work = () => {
                     rounded-full
                     text-sm
                     uppercase
+                    
                     tracking-[3px]
                     hover:bg-neutral-200
                     transition-all
@@ -352,6 +353,7 @@ const Work = () => {
                     text-sm
                     uppercase
                     tracking-[3px]
+                    
                     text-gray-300
                     hover:border-white/30
                     hover:text-white

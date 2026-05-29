@@ -405,7 +405,6 @@ const Intro = () => {
                   </span>
                 </a>
 
-                {/* RESUME */}
                {/* RESUME */}
 <a
   href="/assets/Resume_Raxitzora.pdf"
