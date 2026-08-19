@@ -313,7 +313,7 @@ const About = () => {
             "
           >
             <img
-              src="/assets/raxit9.jpg"
+              src="/assets/logo.jpg"
               alt="Raxit"
               className="
               w-full
@@ -375,7 +375,7 @@ const About = () => {
                 font-[700]
                 "
               >
-                Full Stack Engineer
+                Full Stack
                 <br />
                 & AI Engineer
               </h4>
