@@ -407,7 +407,7 @@ const Intro = () => {
 
                {/* RESUME */}
 <a
-  href="/assets/Resume_Raxitzora.pdf"
+  href="/assets/Resume_Raxitzora (10).pdf"
   target="_blank"
   rel="noopener noreferrer"
   className="

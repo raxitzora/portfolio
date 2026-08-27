@@ -38,13 +38,13 @@ const App = () => {
       "
     >
       {/* LOADER */}
-      {!loaderFinished && (
+      {/* {!loaderFinished && (
         <Loader
           onFinish={() =>
             setLoaderFinished(true)
           }
         />
-      )}
+      )} */}
 
       {/* ENABLE WEBSITE SCROLL ONLY AFTER LOADER */}
       {loaderFinished && <SmoothScroll />}
