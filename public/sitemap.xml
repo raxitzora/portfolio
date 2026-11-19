@@ -1,39 +1,29 @@
 
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- Portfolio Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://raxitzora.in/</loc>
 
-    <!-- Main Portfolio Banner -->
     <image:image>
       <image:loc>https://raxitzora.in/assets/op-image.jpg</image:loc>
     </image:image>
 
-    <!-- Profile Picture -->
     <image:image>
       <image:loc>https://raxitzora.in/assets/me.jpg</image:loc>
     </image:image>
 
-    <!-- Full Stack Development -->
     <image:image>
       <image:loc>https://raxitzora.in/assets/raxit1.jpg</image:loc>
     </image:image>
 
-    <!-- Cybersecurity -->
     <image:image>
       <image:loc>https://raxitzora.in/assets/raxit2.jpg</image:loc>
     </image:image>
 
-    <!-- Artificial Intelligence -->
     <image:image>
       <image:loc>https://raxitzora.in/assets/raxit3.jpg</image:loc>
     </image:image>
 
-    <!-- Portfolio Gallery -->
     <image:image>
       <image:loc>https://raxitzora.in/assets/raxit4.jpg</image:loc>
     </image:image>
@@ -89,7 +79,5 @@
     <image:image>
       <image:loc>https://raxitzora.in/assets/raxit17.jpg</image:loc>
     </image:image>
-
   </url>
-
 </urlset>
