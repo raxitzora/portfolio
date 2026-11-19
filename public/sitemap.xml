@@ -1,7 +1,129 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Root page -->
   <url>
     <loc>https://raxitzora.in/</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Portfolio Images -->
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/op-image.jpg</image:loc>
+      <image:title>Raxit Zora Portfolio Main Banner</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/me.jpg</image:loc>
+      <image:title>Raxit Zora Profile Picture</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit1.jpg</image:loc>
+      <image:title>Raxit Zora - Full Stack Developer</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit2.jpg</image:loc>
+      <image:title>Raxit Zora - Cybersecurity Enthusiast</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit3.jpg</image:loc>
+      <image:title>Raxit Zora - AI Enthusiast</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit4.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 1</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit5.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit6.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit7.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit8.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit9.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit10.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit11.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit12.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit13.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit14.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit15.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit16.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://raxitzora.vercel.app/assets/raxit17.jpg</image:loc>
+      <image:title>Raxit Zora - Project Showcase 2</image:title>
+    </image:image>
   </url>
+
+  <url>
+  <loc>https://medium.com/@imraxitzora/i-completed-develop-genai-apps-with-gemini-and-streamlit-by-google-cloud-0475e092b4aa</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+  <loc>https://medium.com/@imraxitzora/unlocking-multimodal-intelligence-my-journey-with-gemini-api-and-multimodal-rag-9b9037081a39</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+    <url>
+  <loc>https://medium.com/@imraxitzora/about</loc>
+    <lastmod>2025-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>
