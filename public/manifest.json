@@ -1,23 +1,20 @@
+
 {
   "name": "Raxit Zora Portfolio",
   "short_name": "RaxitZora",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
-  "orientation": "portrait",
-  "scope": "/",
-  "description": "Official portfolio of Raxit Zora — Full Stack Developer and AI/Cybersecurity Enthusiast.",
+  "description": "Official portfolio of Raxit Zora, Full Stack Engineer and AI & Cybersecurity Enthusiast.",
   "icons": [
     {
       "src": "/images/site.jpg",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/images/site.jpg",
-      "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg",
+      "purpose": "any"
     }
   ],
   "lang": "en"

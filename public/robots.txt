@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://raxitzora.vercel.app/sitemap.xml
+Sitemap: https://raxitzora.in/sitemap.xml
