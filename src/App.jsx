@@ -25,8 +25,8 @@ import {
 import Loader from "./components/UI/Loader";
 
 const App = () => {
-  const [loaderFinished, setLoaderFinished] =
-    useState(false);
+  // const [loaderFinished, setLoaderFinished] =
+  //   useState(false);
 
   return (
     <div
@@ -47,7 +47,7 @@ const App = () => {
       )} */}
 
       {/* ENABLE WEBSITE SCROLL ONLY AFTER LOADER */}
-      {loaderFinished && <SmoothScroll />}
+      {/* {loaderFinished && <SmoothScroll />} */}
 
       {/* GLOBAL UI */}
       <CustomCursor />
